@@ -36,7 +36,6 @@ dependencies:
 
   flutter_bloc: ^7.0.0
   http: ^0.13.1
-  flutter_form_bloc: ^0.20.1
   url_launcher: ^6.0.3
 
 dev_dependencies:

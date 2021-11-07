@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
 
-import 'base/base_android_handset.dart';
-import 'base/bottom_home_android.dart';
-import 'base/bottom_home_navigation.dart';
+import '../components/base_android_handset.dart';
+import '../components/bottom_home_android.dart';
+import '../components/bottom_home_navigation.dart';
 import 'home_pouch_android.dart';
 
 class HomePouchPage extends StatelessWidget {

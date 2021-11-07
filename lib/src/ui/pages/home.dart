@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:game_master_naheulbeuk/src/ui/base/base_android_handset.dart';
-import 'package:game_master_naheulbeuk/src/ui/home_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base_android_handset.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/home_android.dart';
 import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/base_web.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base_web.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_web.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/bottom_home_android.dart';
-import 'package:game_master_naheulbeuk/src/ui/home_web.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/bottom_home_navigation.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/bottom_home_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/home_web.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/bottom_home_navigation.dart';
 
 class HomePage extends StatelessWidget {
   _content(context) {

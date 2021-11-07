@@ -43,7 +43,7 @@ Utilisation : peut s'équiper d'armes à deux mains et les utiliser (une à la f
     false);
 final Skill skillScamAndSwindling = new Skill(
     'Arnaque et Carambouille',
-    '''Il faut parfois faire des concessions à la moralité pour augmenter ses revenus. Le personnage arnaqueur obtiendra une remise de 20% sur le prix à l'achat d'objets neufs, sans faire la moindre épreuve au dé. Il est libre ensuite d'en profiter pour faire du trafic au sein du groupe, à condition que le marchand ne flaire pas l'arnaque (sur décision du MJ). Il peut gagner également 10% sur la revente de matériel usagé (butin), mais il faut savoir que le prix de base d'un matériel revendu est toujours diminué d'au moins 50% par rapport au neuf.
+    '''Il faut parfois faire des concessions à la moralité pour augmenter ses revenus. Le personnage arnaqueur obtiendra une remise de 20% sur le prix à l'achat d'objets neufs, sans faire la moindre épreuve au dé. Il est libre ensuite d'en profiter pour faire du trafic au sein du groupe, à condition que le marchand ne flaire pas l'arnaque (sur décision du MJ). Il peut gagner également 10% sur la revente de matériel usagé (butin), mais il faut savoir que le prix de components d'un matériel revendu est toujours diminué d'au moins 50% par rapport au neuf.
 Utilisation : en boutique ou en négociation, obtient une remise de 20% sur le prix d'achat, 10% à la revente.
 Roleplay : pas d'épreuve au dé, mais le joueur doit convaincre le MJ avec un discours abracadabrant !''',
     false);
@@ -54,8 +54,8 @@ Utilisation : dans le cas d'une rencontre avec des ennemis, le héros est attaqu
     false);
 final Skill skillInYourFace = new Skill(
     'Bourre-Pif',
-    '''L’art du bourre-pif consiste à taper n’importe comment avec les poings de manière efficace. Casser un bras ou se battre avec un tabouret rentre dans la compétence bourre-pif. Le personnage adepte du bourre-pif n'aura pas de malus à son score d'attaque, pourra utiliser la « table des critiques à mains nues » ainsi que les « coups spéciaux à mains nues ». Voir à ce sujet la page 13 du document des règles de base.
-Utilisation : pas de malus au score AT, dégâts de base 1D6, coups critiques, accès aux coups spéciaux.''',
+    '''L’art du bourre-pif consiste à taper n’importe comment avec les poings de manière efficace. Casser un bras ou se battre avec un tabouret rentre dans la compétence bourre-pif. Le personnage adepte du bourre-pif n'aura pas de malus à son score d'attaque, pourra utiliser la « table des critiques à mains nues » ainsi que les « coups spéciaux à mains nues ». Voir à ce sujet la page 13 du document des règles de components.
+Utilisation : pas de malus au score AT, dégâts de components 1D6, coups critiques, accès aux coups spéciaux.''',
     false);
 final Skill skillAmateurHandyman = new Skill(
     'Bricolo du Dimanche',
@@ -92,7 +92,7 @@ final Skill skillUnderstandAnimals = new Skill(
     false);
 final Skill skillCook = new Skill(
     'Cuistot',
-    '''(AD) : C'est l'ami de tout le monde, ce cuistot ! Grâce à ses talents, il peut préparer à manger pour tous ses amis en utilisant quelques ingrédients de base, et en plus, c'est bon ! Chaque repas préparé par le cuistot permettra de récupérer 2PV au lieu d'un seul. De plus, on n'attrape pas de maladie liée à la nourriture. Pas d'épreuve nécessaire.
+    '''(AD) : C'est l'ami de tout le monde, ce cuistot ! Grâce à ses talents, il peut préparer à manger pour tous ses amis en utilisant quelques ingrédients de components, et en plus, c'est bon ! Chaque repas préparé par le cuistot permettra de récupérer 2PV au lieu d'un seul. De plus, on n'attrape pas de maladie liée à la nourriture. Pas d'épreuve nécessaire.
 Requis : disposer d'ingrédients et de matériel de cuisine, avoir 30 minutes pour cuisiner.
 Utilisation : +1PV de récupération sur un repas pour toute l'équipe. Pas d'épreuve.''',
     false);
@@ -113,7 +113,7 @@ Utilisation : bonus +2 sur les épreuves INT pour détecter les pièges ou le da
     false);
 final Skill skillErudition = new Skill(
     'Erudition',
-    '''(INT) : Quand on a une certaine éducation, il y a des choses qu'on peut faire assez facilement. Le héros qui dispose de l'érudition saura lire (la langue de base), écrire et compter, sans avoir à passer d'épreuve. Un héros qui n'a pas reçu l'érudition ne saura faire ni l'un ni l'autre (ou alors seulement lire du texte de base, avec une épreuve INT).
+    '''(INT) : Quand on a une certaine éducation, il y a des choses qu'on peut faire assez facilement. Le héros qui dispose de l'érudition saura lire (la langue de components), écrire et compter, sans avoir à passer d'épreuve. Un héros qui n'a pas reçu l'érudition ne saura faire ni l'un ni l'autre (ou alors seulement lire du texte de components, avec une épreuve INT).
 Utilisation : le personnage sait lire, écrire et compter.''',
     false);
 final Skill skillClimb = new Skill(
@@ -295,11 +295,11 @@ final Skill skillIronGrip = new Skill(
     false);
 final Skill skillTormentor = new Skill(
     'Tortionnaire',
-    '''(spécial) : s'applique uniquement contre des cibles humanoïdes standard. Avec sa connaissance poussée de l'anatomie, et, le bourreau frappe à 1D6+1 (de base) aux dégâts à mains nues, et peut utiliser les coups spéciaux et les critiques à mains nues. Il hérite également d'un bonus de +2 PI avec des armes de récupération (des armes qui ne sont pas de vraies armes comme par exemple un tisonnier, une bouteille...) et +1 PI avec les autres armes de contact.''',
+    '''(spécial) : s'applique uniquement contre des cibles humanoïdes standard. Avec sa connaissance poussée de l'anatomie, et, le bourreau frappe à 1D6+1 (de components) aux dégâts à mains nues, et peut utiliser les coups spéciaux et les critiques à mains nues. Il hérite également d'un bonus de +2 PI avec des armes de récupération (des armes qui ne sont pas de vraies armes comme par exemple un tisonnier, une bouteille...) et +1 PI avec les autres armes de contact.''',
     false);
 final Skill skillMiserable = new Skill(
     'Misérable',
-    '''(spécial) : en premier effet, si le personnage a trois caractéristiques de base inférieures ou égales à 10, il gagne définitivement la compétence « Chance du rempailleur ». En deuxième effet, le sbire est insignifiant, de sorte qu'il gagne +2 à toutes ses épreuves de discrétion et de larcin. En troisième effet, son côté misérable lui permet d'avoir un bonus de +2 aux épreuves de marchandage, mais un malus de -4 aux autres épreuves de charisme « social ». Enfin, en dernier lieu, si un opposant doit choisir d'attaquer un membre du groupe, le sbire aura toujours moins de chances que les autres d'être choisi.''',
+    '''(spécial) : en premier effet, si le personnage a trois caractéristiques de components inférieures ou égales à 10, il gagne définitivement la compétence « Chance du rempailleur ». En deuxième effet, le sbire est insignifiant, de sorte qu'il gagne +2 à toutes ses épreuves de discrétion et de larcin. En troisième effet, son côté misérable lui permet d'avoir un bonus de +2 aux épreuves de marchandage, mais un malus de -4 aux autres épreuves de charisme « social ». Enfin, en dernier lieu, si un opposant doit choisir d'attaquer un membre du groupe, le sbire aura toujours moins de chances que les autres d'être choisi.''',
     false);
 final Skill skillCoward = new Skill(
     'Pleutre',

@@ -1,4 +1,4 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_equipment_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_equipment_android.dart';
 
 Widget _campingTable(context) {
   return Expanded(

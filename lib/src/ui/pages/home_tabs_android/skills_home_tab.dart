@@ -1,4 +1,4 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_android.dart';
 
 Widget _skillsHomeTab(context) {
   return Container(

@@ -1,4 +1,4 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_fight_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_fight_android.dart';
 
 Widget _fightTable(context) {
   return Expanded(

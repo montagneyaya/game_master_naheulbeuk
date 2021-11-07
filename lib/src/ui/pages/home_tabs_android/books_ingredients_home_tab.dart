@@ -1,4 +1,4 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_equip_spec_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_equip_spec_android.dart';
 
 Widget _booksIngredientsHomeTab(context) {
   return Container(

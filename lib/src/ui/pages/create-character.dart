@@ -7,9 +7,9 @@ import 'package:game_master_naheulbeuk/src/blocs/create_character.listener.dart'
 
 import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_web.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/base_web.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base_web.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_create_character.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/base_android_handset.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base_android_handset.dart';
 
 class CreateCharacterPage extends StatefulWidget {
   @override

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/base_android_handset.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/bottom_home_navigation.dart';
-import 'package:game_master_naheulbeuk/src/ui/home_equipment_android.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/bottom_home_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/home_fight_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/bottom_home_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base_android_handset.dart';
 
-class HomeEquipmentPage extends StatelessWidget {
+import '../components/bottom_home_navigation.dart';
+
+class HomeFightPage extends StatelessWidget {
   _content(context) {
     final Device device = Device();
     switch (device.device(context)) {
@@ -14,7 +15,7 @@ class HomeEquipmentPage extends StatelessWidget {
         // TODO: Handle this case.
         break;
       case Devices.androidHandset:
-        return HomeEquipmentAndroid();
+        return HomeFightAndroid();
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;
@@ -47,7 +48,7 @@ class HomeEquipmentPage extends StatelessWidget {
         break;
       case Devices.androidHandset:
         return BaseAndroid(_content(context), null, true,
-            bottomEquipmentAndroid(context), bottomHomeNavigation(3, context));
+            bottomFightAndroid(context), bottomHomeNavigation(1, context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

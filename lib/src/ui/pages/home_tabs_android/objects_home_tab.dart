@@ -1,8 +1,8 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_equip_spec_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_equip_spec_android.dart';
 
-Widget _potionsMunitionsHomeTab(context) {
+Widget _objectsHomeTab(context) {
   return Container(
-    decoration: backgroundPotions,
+    decoration: backgroundObjects,
     child: SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(
@@ -26,7 +26,7 @@ Widget _potionsMunitionsHomeTab(context) {
                       Expanded(
                         child: Column(
                           children: [
-                            Expanded(child: Text('Nombre')),
+                            Expanded(child: Text('Objets speciaux')),
                             Expanded(child: textField(context)),
                             Expanded(child: textField(context)),
                             Expanded(child: textField(context)),
@@ -35,27 +35,11 @@ Widget _potionsMunitionsHomeTab(context) {
                         ),
                       ),
                       Expanded(
-                        flex: 2,
                         child: Padding(
                           padding: EdgeInsets.only(left: 10),
                           child: Column(
                             children: [
-                              Expanded(child: Text('Munitions')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Column(
-                            children: [
-                              Expanded(child: Text('Effets')),
+                              Expanded(child: Text('Bonus / Effets')),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
@@ -69,16 +53,13 @@ Widget _potionsMunitionsHomeTab(context) {
                 ),
                 Spacer(),
                 Expanded(
-                  flex: 9,
+                  flex: 6,
                   child: Row(
                     children: [
                       Expanded(
                         child: Column(
                           children: [
-                            Expanded(child: Text('Doses')),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
+                            Expanded(child: Text('Charges')),
                             Expanded(child: textField(context)),
                             Expanded(child: textField(context)),
                             Expanded(child: textField(context)),
@@ -93,10 +74,7 @@ Widget _potionsMunitionsHomeTab(context) {
                           padding: EdgeInsets.only(left: 10),
                           child: Column(
                             children: [
-                              Expanded(child: Text('Potions/Poisons')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(child: Text('Objets charges')),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
@@ -113,9 +91,6 @@ Widget _potionsMunitionsHomeTab(context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),
                               Expanded(child: textField(context)),

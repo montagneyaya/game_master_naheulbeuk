@@ -4,11 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_backpack.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_camping.dart';
 import 'package:game_master_naheulbeuk/src/ui/background/background_treasures.dart';
-import 'package:game_master_naheulbeuk/src/ui/themes/modify_elements.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/text_field.dart';
 
-part 'package:game_master_naheulbeuk/src/ui/home_tabs_android/backpack_home_tab.dart';
-part 'package:game_master_naheulbeuk/src/ui/home_tabs_android/camping_home_tab.dart';
-part 'package:game_master_naheulbeuk/src/ui/home_tabs_android/treasures_home_tab.dart';
+part 'package:game_master_naheulbeuk/src/ui/pages/home_tabs_android/backpack_home_tab.dart';
+part 'package:game_master_naheulbeuk/src/ui/pages/home_tabs_android/camping_home_tab.dart';
+part 'package:game_master_naheulbeuk/src/ui/pages/home_tabs_android/treasures_home_tab.dart';
 
 class HomeEquipmentAndroid extends StatefulWidget {
   @override

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:game_master_naheulbeuk/src/ui/responsive/breakpoint.dart';
 import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/app_bar_web.dart';
-import 'package:game_master_naheulbeuk/src/ui/base/navigation.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/app_bar_web.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/navigation.dart';
 
 class BaseWeb extends StatelessWidget {
   final Widget content;

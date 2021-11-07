@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:game_master_naheulbeuk/src/ui/background/background_pouch.dart';
-import 'package:game_master_naheulbeuk/src/ui/themes/modify_elements.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/text_field.dart';
 
-part 'package:game_master_naheulbeuk/src/ui/home_tabs_android/pouch_home_tab.dart';
+part 'package:game_master_naheulbeuk/src/ui/pages/home_tabs_android/pouch_home_tab.dart';
 
 class HomePouchAndroid extends StatefulWidget {
   @override

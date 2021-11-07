@@ -1,4 +1,4 @@
-part of 'package:game_master_naheulbeuk/src/ui/home_pouch_android.dart';
+part of 'package:game_master_naheulbeuk/src/ui/pages/home_pouch_android.dart';
 
 Widget _pouchHomeTab(context) {
   return Container(
