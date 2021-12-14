@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Device {
-  device(context) {
+  Devices? device(context) {
     final TargetPlatform targetPlatform = Theme.of(context).platform;
     final double dimension = MediaQuery.of(context).size.shortestSide;
     if (kIsWeb) return Devices.web;

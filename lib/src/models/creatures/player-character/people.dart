@@ -33,7 +33,7 @@ class People {
       this.birthSkills,
       this.optionalSkills);
 
-  characteristics() {
+  List<List<int>> characteristics() {
     return [
       this.courage,
       this.intellect,
@@ -43,7 +43,7 @@ class People {
     ];
   }
 
-  fight() {
+  List<int> fight() {
     return [this.attack, this.parry];
   }
 

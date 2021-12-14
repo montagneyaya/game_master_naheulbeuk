@@ -139,14 +139,14 @@ class PlayerCharacter extends Creatures {
     }
   }
 
-  _intellectSup(int value) {
+  AddSpellDamages _intellectSup(int value) {
     AddSpellDamages? addIntellectDamages;
     addIntellectDamages!.txtDamages = 'Intelligence (INT)';
     addIntellectDamages.damages = value - 12;
     return addIntellectDamages;
   }
 
-  _strengthSup(int value) {
+  AddNaturalDamages _strengthSup(int value) {
     AddNaturalDamages? addStrengthDamages;
     addStrengthDamages!.txtDamages = 'Force (FO)';
     if (value > 12) addStrengthDamages.damages = value - 12;

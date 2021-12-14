@@ -5,7 +5,7 @@ class Skill {
 
   Skill(this.skill, this.described, this.selected);
 
-  isSelect(bool _check) {
+  void isSelect(bool _check) {
     this.selected = _check;
   }
 

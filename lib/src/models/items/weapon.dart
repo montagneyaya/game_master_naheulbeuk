@@ -18,7 +18,7 @@ class Impact {
 
   Impact(this._dices);
 
-  impact() {
+  int impact() {
     return this._dices.d6() * this._nbD + this._addDamages;
   }
 

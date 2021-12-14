@@ -33,7 +33,7 @@ class Job {
       this.inheritedSkills,
       this.optionalSkills);
 
-  characteristics() {
+  List<List<int>> characteristics() {
     return [
       this.courage,
       this.intellect,
@@ -43,11 +43,11 @@ class Job {
     ];
   }
 
-  fight() {
+  List<int> fight() {
     return [this.attack, this.parry];
   }
 
-  points() {
+  List<int> points() {
     return [this.hp, this.ap];
   }
 

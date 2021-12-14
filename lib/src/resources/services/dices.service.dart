@@ -1,35 +1,35 @@
 import 'dart:math';
 
 class Dices {
-  d2() {
+  int d2() {
     return Random().nextInt(2) + 1;
   }
 
-  d4() {
+  int d4() {
     return Random().nextInt(4) + 1;
   }
 
-  d6() {
+  int d6() {
     return Random().nextInt(6) + 1;
   }
 
-  d8() {
+  int d8() {
     return Random().nextInt(8) + 1;
   }
 
-  d10() {
+  int d10() {
     return Random().nextInt(10) + 1;
   }
 
-  d12() {
+  int d12() {
     return Random().nextInt(12) + 1;
   }
 
-  d20() {
+  int d20() {
     return Random().nextInt(20) + 1;
   }
 
-  d100() {
+  int d100() {
     return Random().nextInt(100) + 1;
   }
 }
