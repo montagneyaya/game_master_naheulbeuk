@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/home/home.dart';
 import 'package:game_master_naheulbeuk/src/ui/themes/theme-naheulbeuk-android.dart';
 import 'package:game_master_naheulbeuk/src/ui/themes/theme-naheulbeuk-ios.dart';
 import 'package:game_master_naheulbeuk/src/ui/themes/theme-naheulbeuk-web.dart';
@@ -21,18 +22,26 @@ class TerreDeFanghApp extends StatelessWidget {
       themeDevice = terreDeFanghTheme(context);
     if (targetPlatform == TargetPlatform.iOS)
       themeDevice = terreDeFanghIOSTheme(context);
+    ThemeData? themeDeviceDark;
+    if (kIsWeb) themeDevice = terreDeFanghWebThemeDark(context);
+    if (targetPlatform == TargetPlatform.android)
+      themeDevice = terreDeFanghThemeDark(context);
+    if (targetPlatform == TargetPlatform.iOS)
+      themeDevice = terreDeFanghIOSThemeDark(context);
     return MaterialApp(
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          const Locale('fr', 'FR'),
-        ],
-        title: 'Terre de Fangh',
-        initialRoute: '/',
-        routes: _route(),
-        theme: themeDevice);
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('fr', 'FR'),
+      ],
+      title: 'Terre de Fangh',
+      initialRoute: '/',
+      routes: _route(),
+      theme: themeDevice,
+      darkTheme: themeDeviceDark,
+    );
   }
 }

@@ -5,7 +5,7 @@ ColorScheme terreDeFanghColors() {
     primary: Colors.brown[500]!,
     primaryVariant: Colors.brown[800]!,
     secondary: Colors.blueGrey[600]!,
-    secondaryVariant: Colors.indigoAccent[400]!,
+    secondaryVariant: Colors.indigo[200]!,
     surface: Colors.lime[100]!,
     background: Colors.lime[100]!,
     error: Colors.red[900]!,
