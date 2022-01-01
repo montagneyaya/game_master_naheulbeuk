@@ -8,13 +8,13 @@ Widget _campingTable(BuildContext context) {
         Expanded(
           flex: 2,
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
@@ -51,17 +51,17 @@ Widget _campingTab(BuildContext context) {
                 ),
                 Expanded(
                     child: Padding(
-                        padding: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.only(top: 8),
                         child: Text('Tente'))),
                 _campingTable(context),
                 Expanded(
                     child: Padding(
-                        padding: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.only(top: 8),
                         child: Text('Matelas'))),
                 _campingTable(context),
                 Expanded(
                     child: Padding(
-                        padding: EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.only(top: 8),
                         child: Text('Couverture'))),
                 _campingTable(context),
                 Spacer(),

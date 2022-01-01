@@ -182,7 +182,7 @@ TextTheme terreDeFanghTextDark() {
       fontSize: 18.0,
       height: 1.0,
       fontWeight: FontWeight.normal,
-      letterSpacing: 1.5,
+      letterSpacing: 0.8,
       color: Colors.white,
     ),
     bodyText1: base.bodyText1!.copyWith(
@@ -190,7 +190,7 @@ TextTheme terreDeFanghTextDark() {
       fontSize: 16.0,
       height: 1.0,
       fontWeight: FontWeight.normal,
-      letterSpacing: 1.0,
+      letterSpacing: 0.4,
       color: Colors.white,
     ),
     button: base.button!.copyWith(

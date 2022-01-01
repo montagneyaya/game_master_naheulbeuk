@@ -16,19 +16,19 @@ Widget _armorsTable(BuildContext context) {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
@@ -41,7 +41,7 @@ Widget _armorsTable(BuildContext context) {
                     Text('Bonus/Malus'),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
@@ -76,7 +76,7 @@ Widget _armorsTab(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 15),
+                  padding: EdgeInsets.only(left: 16),
                   child: Row(
                     children: [
                       Spacer(),

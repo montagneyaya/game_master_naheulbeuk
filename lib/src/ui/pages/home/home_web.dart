@@ -8,7 +8,7 @@ class HomeWeb extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 30),
+          padding: EdgeInsets.symmetric(vertical: 24),
           child: Text(
             'Bienvenue sur la terre de Fangh',
             style: Theme.of(context).textTheme.headline2,

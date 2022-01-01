@@ -7,6 +7,7 @@ ThemeData terreDeFanghTheme(BuildContext context) {
   return base.copyWith(
     textTheme: terreDeFanghText(),
     colorScheme: terreDeFanghColors(),
+    brightness: Brightness.light,
   );
 }
 
@@ -15,5 +16,6 @@ ThemeData terreDeFanghThemeDark(BuildContext context) {
   return base.copyWith(
     textTheme: terreDeFanghTextDark(),
     colorScheme: terreDeFanghColorsDark(),
+    brightness: Brightness.dark,
   );
 }

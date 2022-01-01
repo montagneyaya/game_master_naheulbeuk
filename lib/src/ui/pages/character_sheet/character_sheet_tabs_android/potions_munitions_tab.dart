@@ -39,7 +39,7 @@ Widget _potionsMunitionsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Munitions')),
@@ -56,7 +56,7 @@ Widget _potionsMunitionsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),
@@ -96,7 +96,7 @@ Widget _potionsMunitionsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Potions/Poisons')),
@@ -115,7 +115,7 @@ Widget _potionsMunitionsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),

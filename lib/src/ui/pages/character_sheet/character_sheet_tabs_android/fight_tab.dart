@@ -7,19 +7,19 @@ Widget _fightTable(BuildContext context) {
         Expanded(child: textField(context)),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
@@ -35,13 +35,13 @@ Widget _fightTable2(BuildContext context) {
         Expanded(child: textField(context)),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 8),
             child: textField(context),
           ),
         ),
@@ -83,7 +83,7 @@ Widget _fightTab(BuildContext context) {
                   child: Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 20, right: 10),
+                        padding: EdgeInsets.only(top: 16, right: 8),
                         child: Column(
                           children: [
                             Expanded(child: Text('Attaque (AT)')),
@@ -117,7 +117,7 @@ Widget _fightTab(BuildContext context) {
                   child: Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 20, right: 10),
+                        padding: EdgeInsets.only(top: 16, right: 8),
                         child: Column(
                           children: [
                             Expanded(child: Text('Attaque (AT)')),
@@ -143,19 +143,19 @@ Widget _fightTab(BuildContext context) {
                     children: [
                       Text('Esquive (ESQ)'),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: Text('Base'),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
+                          padding: EdgeInsets.only(left: 8, right: 8),
                           child: textField(context),
                         ),
                       ),
                       Text('Modif.'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -175,7 +175,7 @@ Widget _fightTab(BuildContext context) {
                                   Text('PR Naturel'),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: 10),
+                                      padding: EdgeInsets.only(left: 8),
                                       child: textField(context),
                                     ),
                                   ),
@@ -188,7 +188,7 @@ Widget _fightTab(BuildContext context) {
                                   Text('PR Magique'),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: 10),
+                                      padding: EdgeInsets.only(left: 8),
                                       child: textField(context),
                                     ),
                                   ),
@@ -206,7 +206,7 @@ Widget _fightTab(BuildContext context) {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: 10),
+                                      padding: EdgeInsets.only(left: 8),
                                       child: textField(context),
                                     ),
                                   ),
@@ -219,7 +219,7 @@ Widget _fightTab(BuildContext context) {
                                   Text('PR Total'),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: 10),
+                                      padding: EdgeInsets.only(left: 8),
                                       child: textField(context),
                                     ),
                                   ),
@@ -231,7 +231,7 @@ Widget _fightTab(BuildContext context) {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: Column(
                             children: [
                               Expanded(
@@ -240,7 +240,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Tete'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -253,7 +253,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Torse'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -266,7 +266,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Bras'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -279,7 +279,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Mains'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -292,7 +292,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Bouclier'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -305,7 +305,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Jambes'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),
@@ -318,7 +318,7 @@ Widget _fightTab(BuildContext context) {
                                     Text('Pieds'),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 8),
                                         child: textField(context),
                                       ),
                                     ),

@@ -16,13 +16,13 @@ Widget _weaponsTable(BuildContext context) {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
@@ -35,7 +35,7 @@ Widget _weaponsTable(BuildContext context) {
                     Text('Bonus/Malus'),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: textField(context),
                       ),
                     ),
@@ -70,7 +70,7 @@ Widget _weaponsTab(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 16),
                   child: Row(
                     children: [
                       Spacer(),
@@ -85,7 +85,7 @@ Widget _weaponsTab(BuildContext context) {
                   child: Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(right: 8),
                         child: Column(
                           children: [
                             Expanded(child: Text('Arme 1')),
@@ -122,7 +122,7 @@ Widget _weaponsTab(BuildContext context) {
                       Text('Degats naturels supplementaires'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -135,7 +135,7 @@ Widget _weaponsTab(BuildContext context) {
                       Text('Degats magiques supplementaires'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),

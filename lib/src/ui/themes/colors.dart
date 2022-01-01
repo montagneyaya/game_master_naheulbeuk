@@ -21,10 +21,10 @@ ColorScheme terreDeFanghColors() {
 
 ColorScheme terreDeFanghColorsDark() {
   final ColorScheme base = ColorScheme(
-    primary: Colors.brown[500]!,
-    primaryVariant: Colors.brown[800]!,
-    secondary: Colors.blueGrey[600]!,
-    secondaryVariant: Colors.indigoAccent[400]!,
+    primary: Colors.blueGrey[600]!,
+    primaryVariant: Colors.indigo[200]!,
+    secondary: Colors.brown[500]!,
+    secondaryVariant: Colors.brown[800]!,
     surface: Colors.grey[900]!,
     background: Colors.grey[900]!,
     error: Colors.red[900]!,

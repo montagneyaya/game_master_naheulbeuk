@@ -25,17 +25,17 @@ Widget _backpackTab(BuildContext context) {
                       Text('Charge Max'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 8),
                         child: Text('Charge Total'),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -48,7 +48,7 @@ Widget _backpackTab(BuildContext context) {
                       Text('Poids de l\'equipement'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
+                          padding: EdgeInsets.only(left: 8, right: 8),
                           child: textField(context),
                         ),
                       ),
@@ -61,7 +61,7 @@ Widget _backpackTab(BuildContext context) {
                       Text('Poids du sac a dos'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -76,13 +76,13 @@ Widget _backpackTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),

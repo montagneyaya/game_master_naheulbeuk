@@ -26,7 +26,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 3, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -81,7 +81,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 4, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -94,7 +94,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 4, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -107,7 +107,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 4, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -120,7 +120,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 4, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),
@@ -133,7 +133,7 @@ Widget _pouchTab(BuildContext context) {
                       Expanded(flex: 4, child: textField(context)),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: textField(context),
                         ),
                       ),

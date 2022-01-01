@@ -38,7 +38,7 @@ Widget _objectsTab(BuildContext context) {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Bonus / Effets')),
@@ -76,7 +76,7 @@ Widget _objectsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Objets charges')),
@@ -93,7 +93,7 @@ Widget _objectsTab(BuildContext context) {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),

@@ -41,7 +41,7 @@ Widget _booksIngredientsTab(BuildContext context) {
                       Expanded(
                         flex: 3,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 8),
                           child: Column(
                             children: [
                               Expanded(child: Text('Ingredients')),

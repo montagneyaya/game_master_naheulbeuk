@@ -25,7 +25,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Niveau'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -38,7 +38,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Experience'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -52,7 +52,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Points de Destin'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -65,7 +65,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Energie Vital (EV)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -78,7 +78,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Energie Astral (EA)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -92,7 +92,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Resistance Magique'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -105,7 +105,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Resistance Physique'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -118,7 +118,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Resistance Psychique'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -131,7 +131,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Ingeniosite'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -145,7 +145,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Courage (COU)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -158,7 +158,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Intelligence (INT)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -171,7 +171,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Charisme (CHA)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -184,7 +184,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Adresse (AD)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -197,7 +197,7 @@ Widget _statisticsTab(BuildContext context) {
                       Text('Force (FO)'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),

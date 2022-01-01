@@ -28,7 +28,7 @@ Widget _mainTab(BuildContext context) {
                       decoration: BoxDecoration(
                         border: Border.all(
                             color: Theme.of(context).colorScheme.primary),
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   ),
@@ -40,7 +40,7 @@ Widget _mainTab(BuildContext context) {
                       Text('Nom'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -53,7 +53,7 @@ Widget _mainTab(BuildContext context) {
                       Text('Genre'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -66,7 +66,7 @@ Widget _mainTab(BuildContext context) {
                       Text('Origine'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -79,7 +79,7 @@ Widget _mainTab(BuildContext context) {
                       Text('Metier'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),
@@ -101,7 +101,7 @@ Widget _mainTab(BuildContext context) {
                       Text('Signes Particuliers'),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 16),
                           child: textField(context),
                         ),
                       ),

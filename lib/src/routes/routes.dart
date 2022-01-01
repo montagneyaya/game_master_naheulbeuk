@@ -8,5 +8,6 @@ Map<String, WidgetBuilder> _route() {
     '/character-sheet-equip-spec': (context) => CharacterSheetEquipSpecPage(),
     '/character-sheet-equipment': (context) => CharacterSheetEquipmentPage(),
     '/character-sheet-pouch': (context) => CharacterSheetPouchPage(),
+    '/setting': (context) => SettingPage(),
   };
 }
