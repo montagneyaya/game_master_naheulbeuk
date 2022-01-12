@@ -56,7 +56,7 @@ class BaseWeb extends StatelessWidget {
         case null:
           return AssetImage('assets/images/web/banner-l.webp');
       }
-    }
-    else return AssetImage('assets/images/web/banner-l.webp');
+    } else
+      return AssetImage('assets/images/web/banner-l.webp');
   }
 }

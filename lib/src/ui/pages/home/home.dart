@@ -87,8 +87,7 @@ class HomePage extends StatelessWidget {
       case Devices.web:
         return _homeBase(context);
       case Devices.androidHandset:
-        return DefaultTabController(
-            length: 3, child: _homeBase(context));
+        return DefaultTabController(length: 3, child: _homeBase(context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

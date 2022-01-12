@@ -40,6 +40,7 @@ dependencies:
   http: ^0.13.4
   url_launcher: ^6.0.17
   flutter_markdown: ^0.6.9
+  flutter_svg: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/images/
     - assets/images/mobile/
     - assets/images/web/
 
@@ -106,3 +108,6 @@ flutter:
     - family: IconsRPG
       fonts:
         - asset: assets/fonts/IconsRPG.ttf
+    - family: IconsDices
+      fonts:
+        - asset: assets/fonts/IconsDices.ttf

@@ -27,7 +27,8 @@ class _SettingAndroidState extends State<SettingAndroid> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('Preference'),
+        Text('Parametres'),
+        Divider(),
         Row(
           children: [
             Text('Theme'),

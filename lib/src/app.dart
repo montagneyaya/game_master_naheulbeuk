@@ -1,9 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:game_master_naheulbeuk/src/resources/notifier/theme_mode.notifier.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/create_character/create_character.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/home/home.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/setting/setting.dart';
 import 'package:game_master_naheulbeuk/src/ui/themes/theme-naheulbeuk-android.dart';
@@ -13,7 +15,6 @@ import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sh
 import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet_equipment.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet_fight.dart';
 import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet_pouch.dart';
-import 'package:provider/provider.dart';
 part 'package:game_master_naheulbeuk/src/routes/routes.dart';
 
 class TerreDeFanghApp extends StatelessWidget {

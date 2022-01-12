@@ -212,7 +212,7 @@ TextTheme terreDeFanghTextDark() {
     overline: base.overline!.copyWith(
       fontFamily: 'benguiab',
       fontSize: 11.0,
-      height: 1.0, 
+      height: 1.0,
       fontWeight: FontWeight.bold,
       letterSpacing: -0.1,
       color: Colors.white,

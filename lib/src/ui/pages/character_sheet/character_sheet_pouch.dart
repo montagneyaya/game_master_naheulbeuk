@@ -49,8 +49,12 @@ class CharacterSheetPouchPage extends StatelessWidget {
         // TODO: Handle this case.
         break;
       case Devices.androidHandset:
-        return BaseAndroid(_content(context), null, true,
-            tabBarAndroid(context, pouchTab), bottomHomeNavigation(4, context));
+        return BaseAndroid(
+            _content(context),
+            null,
+            true,
+            tabBarAndroid(context, pouchTab),
+            bottomHomeNavigation(4, context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

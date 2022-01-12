@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:game_master_naheulbeuk/src/ui/components/tab_bar/tab_bar.dart';
-import 'package:game_master_naheulbeuk/src/ui/instances/tab_bar/tab_bar_character_sheet_android.dart';
-import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/background/background.dart';
+import 'package:game_master_naheulbeuk/src/ui/components/base/base_web.dart';
 import 'package:game_master_naheulbeuk/src/ui/components/base/base_android_handset.dart';
-import 'package:game_master_naheulbeuk/src/ui/instances/bottom_nav_bar/bottom_navigation_bar_character_sheet.dart';
-import 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_sheet_fight_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/instances/background/background.dart';
+import 'package:game_master_naheulbeuk/src/ui/responsive/device.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/create_character/create_character_android.dart';
+import 'package:game_master_naheulbeuk/src/ui/pages/create_character/create_character_web.dart';
 
-class CharacterSheetFightPage extends StatelessWidget {
+class CreateCharacterPage extends StatelessWidget {
   Widget _content(BuildContext context) {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-        // TODO: Handle this case.
-        break;
+        return CreateCharacterWeb();
       case Devices.androidHandset:
-        return CharacterSheetFightAndroid();
+        return CreateCharacterAndroid();
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;
@@ -42,19 +42,14 @@ class CharacterSheetFightPage extends StatelessWidget {
     return Scaffold();
   }
 
-  Widget _characterSheetBase(BuildContext context) {
+  Widget _createCharacterBase(BuildContext context) {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-        // TODO: Handle this case.
-        break;
+        return BaseWeb(
+            _content(context), background(context, imageWeb, BoxFit.cover));
       case Devices.androidHandset:
-        return BaseAndroid(
-            _content(context),
-            null,
-            true,
-            tabBarAndroid(context, fightTab),
-            bottomHomeNavigation(1, context));
+        return BaseAndroid(_content(context), null, false, null, null);
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;
@@ -87,11 +82,9 @@ class CharacterSheetFightPage extends StatelessWidget {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-        // TODO: Handle this case.
-        break;
+        return _createCharacterBase(context);
       case Devices.androidHandset:
-        return DefaultTabController(
-            length: 3, child: _characterSheetBase(context));
+        return _createCharacterBase(context);
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

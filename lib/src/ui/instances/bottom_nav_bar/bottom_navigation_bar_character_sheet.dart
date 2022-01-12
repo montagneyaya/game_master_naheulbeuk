@@ -8,7 +8,7 @@ BottomNavigationBar bottomHomeNavigation(int index, BuildContext context) {
     backgroundColor: Theme.of(context).colorScheme.background,
     selectedItemColor: Theme.of(context).colorScheme.primaryVariant,
     unselectedItemColor:
-    Theme.of(context).colorScheme.onBackground.withOpacity(darkOpacity26),
+        Theme.of(context).colorScheme.onBackground.withOpacity(darkOpacity26),
     currentIndex: index,
     showUnselectedLabels: true,
     items: [
@@ -47,7 +47,8 @@ BottomNavigationBar bottomHomeNavigation(int index, BuildContext context) {
           Navigator.pushReplacementNamed(context, '/character-sheet-fight');
           break;
         case 2:
-          Navigator.pushReplacementNamed(context, '/character-sheet-equip-spec');
+          Navigator.pushReplacementNamed(
+              context, '/character-sheet-equip-spec');
           break;
         case 3:
           Navigator.pushReplacementNamed(context, '/character-sheet-equipment');

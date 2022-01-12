@@ -11,30 +11,30 @@ class SettingPage extends StatelessWidget {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.androidHandset:
         return SettingAndroid();
       case Devices.iOSHandset:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.androidTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.iOSTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.windows:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.linux:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.macOS:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.fuchsia:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case null:
         return Scaffold();
@@ -49,28 +49,27 @@ class SettingPage extends StatelessWidget {
         return BaseWeb(
             _content(context), background(context, imageWeb, BoxFit.cover));
       case Devices.androidHandset:
-        return BaseAndroid(_content(context), null, true,
-            null, null);
+        return BaseAndroid(_content(context), null, true, null, null);
       case Devices.iOSHandset:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.androidTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.iOSTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.windows:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.linux:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.macOS:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.fuchsia:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case null:
         return Scaffold();
@@ -87,25 +86,25 @@ class SettingPage extends StatelessWidget {
       case Devices.androidHandset:
         return _settingBase(context);
       case Devices.iOSHandset:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.androidTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.iOSTablet:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.windows:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.linux:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.macOS:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case Devices.fuchsia:
-      // TODO: Handle this case.
+        // TODO: Handle this case.
         break;
       case null:
         return Scaffold();
