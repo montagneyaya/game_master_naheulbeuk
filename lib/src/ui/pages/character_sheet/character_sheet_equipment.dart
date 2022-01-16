@@ -50,11 +50,7 @@ class CharacterSheetEquipmentPage extends StatelessWidget {
         break;
       case Devices.androidHandset:
         return BaseAndroid(
-            _content(context),
-            null,
-            true,
-            tabBarAndroid(context, equipmentTab),
-            bottomHomeNavigation(3, context));
+            _content(context), null, true, tabBarAndroid(context, equipmentTab), bottomHomeNavigation(3, context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;
@@ -90,8 +86,7 @@ class CharacterSheetEquipmentPage extends StatelessWidget {
         // TODO: Handle this case.
         break;
       case Devices.androidHandset:
-        return DefaultTabController(
-            length: 3, child: _charcterSheetBase(context));
+        return DefaultTabController(length: 3, child: _charcterSheetBase(context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

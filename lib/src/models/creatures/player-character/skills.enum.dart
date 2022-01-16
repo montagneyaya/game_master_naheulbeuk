@@ -257,10 +257,8 @@ final Skill skillPainIsForTheWeak = new Skill(
     '''(PR) : Le héros n'a pas mal, même quand il a mal. Il serre les dents et continue de faire son malin, parce que la douleur est une simple information. Le héros qui rit des trucs de mauviette dispose d'une protection naturelle de 1 point supplémentaire (PR+1).
 Utilisation : +1 au score de PR totale, mais ce bonus ne compte pas dans l'encombrement.''',
     false);
-final Skill skillSuperPowerful = new Skill(
-    'Super Bourrin',
-    '''(spéciale) : celui qui tente de parer une attaque d'un ogre « super bourrin » a un malus de PRD-5''',
-    false);
+final Skill skillSuperPowerful = new Skill('Super Bourrin',
+    '''(spéciale) : celui qui tente de parer une attaque d'un ogre « super bourrin » a un malus de PRD-5''', false);
 final Skill skillAttackLeap = new Skill(
     'Bond d\'Attaque',
     '''(spécial) : UNE FOIS PAR COMBAT. Technique agile surprenante permettant de se rapprocher rapidement et d'attaquer une cible distante de moins de huit mètres au cours du même assaut – donne également l'initiative sur cet assaut.''',

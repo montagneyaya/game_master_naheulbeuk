@@ -25,6 +25,7 @@ final Job jobFighter = new Job(
       skillShootProperly,
       skillPainIsForTheWeak
     ]);
+
 final Job jobNinja = new Job(
     'Assassin',
     [8, 20],
@@ -49,6 +50,7 @@ final Job jobNinja = new Job(
       skillSwim,
       skillLikeNothing
     ]);
+
 final Job jobRogue = new Job(
     'Voleur',
     [8, 20],
@@ -62,13 +64,7 @@ final Job jobRogue = new Job(
     0,
     3,
     [specializationAny],
-    [
-      skillCallForReinforcements,
-      skillFurl,
-      skillSilentMovement,
-      skillDetect,
-      skillLocksmith
-    ],
+    [skillCallForReinforcements, skillFurl, skillSilentMovement, skillDetect, skillLocksmith],
     [
       skillScamAndSwindling,
       skillDefuse,
@@ -79,6 +75,7 @@ final Job jobRogue = new Job(
       skillMistrust,
       skillLikeNothing
     ]);
+
 final Job jobCleric = new Job(
     'Prêtre',
     [8, 20],
@@ -91,23 +88,10 @@ final Job jobCleric = new Job(
     0,
     20,
     0,
-    [
-      specializationAdathie,
-      specializationMalgar,
-      specializationYouclidh,
-      specializationDlul,
-      specializationSlanouch
-    ],
+    [specializationAdathie, specializationMalgar, specializationYouclidh, specializationDlul, specializationSlanouch],
     [skillErudition, skillMistrust, skillRecovery],
-    [
-      skillScamAndSwindling,
-      skillRide,
-      skillCook,
-      skillPoppycock,
-      skillFirstAid,
-      skillSkinflint,
-      skillWeirdRunes
-    ]);
+    [skillScamAndSwindling, skillRide, skillCook, skillPoppycock, skillFirstAid, skillSkinflint, skillWeirdRunes]);
+
 final Job jobWizard = new Job(
     'Mage',
     [8, 20],
@@ -134,14 +118,8 @@ final Job jobWizard = new Job(
       specializationTzinntch
     ],
     [skillErudition, skillRecovery, skillWeirdRunes],
-    [
-      skillCallForReinforcements,
-      skillGroupLeader,
-      skillRide,
-      skillPoppycock,
-      skillMonsterLanguages,
-      skillFirstAid
-    ]);
+    [skillCallForReinforcements, skillGroupLeader, skillRide, skillPoppycock, skillMonsterLanguages, skillFirstAid]);
+
 final Job jobPaladin = new Job(
     'Paladin',
     [12, 20],
@@ -154,20 +132,10 @@ final Job jobPaladin = new Job(
     2,
     10,
     0,
-    [
-      specializationDlul,
-      specializationSlanouch,
-      specializationBraav,
-      specializationKhornettoh
-    ],
+    [specializationDlul, specializationSlanouch, specializationBraav, specializationKhornettoh],
     [skillRide, skillIntimidate, skillRecovery],
-    [
-      skillStuffingWeapons,
-      skillMessUp,
-      skillErudition,
-      skillPoppycock,
-      skillFirstAid
-    ]);
+    [skillStuffingWeapons, skillMessUp, skillErudition, skillPoppycock, skillFirstAid]);
+
 final Job jobRanger = new Job(
     'Ranger',
     [8, 20],
@@ -193,6 +161,7 @@ final Job jobRanger = new Job(
       skillFirstAid,
       skillShootProperly
     ]);
+
 final Job jobBard = new Job(
     'Menestrel',
     [8, 20],
@@ -206,21 +175,9 @@ final Job jobBard = new Job(
     0,
     2,
     [specializationAny],
-    [
-      skillAttractsMonster,
-      skillRide,
-      skillErudition,
-      skillPoppycock,
-      skillJugglingAndDancing,
-      skillTouchingNaivety
-    ],
-    [
-      skillMistrust,
-      skillBeggingAndWhining,
-      skillFirstAid,
-      skillWeirdRunes,
-      skillShootProperly
-    ]);
+    [skillAttractsMonster, skillRide, skillErudition, skillPoppycock, skillJugglingAndDancing, skillTouchingNaivety],
+    [skillMistrust, skillBeggingAndWhining, skillFirstAid, skillWeirdRunes, skillShootProperly]);
+
 final Job jobDealer = new Job(
     'Marchant',
     [8, 20],
@@ -234,21 +191,9 @@ final Job jobDealer = new Job(
     0,
     3,
     [specializationAny],
-    [
-      skillCallForReinforcements,
-      skillScamAndSwindling,
-      skillErudition,
-      skillPoppycock,
-      skillMistrust
-    ],
-    [
-      skillGroupLeader,
-      skillRide,
-      skillCook,
-      skillBlacksmith,
-      skillTreasureInstinct,
-      skillWeirdRunes
-    ]);
+    [skillCallForReinforcements, skillScamAndSwindling, skillErudition, skillPoppycock, skillMistrust],
+    [skillGroupLeader, skillRide, skillCook, skillBlacksmith, skillTreasureInstinct, skillWeirdRunes]);
+
 final Job jobEngineer = new Job(
     'Ingénieur',
     [8, 20],
@@ -273,21 +218,9 @@ final Job jobEngineer = new Job(
       specializationBasketMaker,
       specializationGoblin
     ],
-    [
-      skillAmateurHandyman,
-      skillDefuse,
-      skillBlacksmith,
-      skillLikeNothing,
-      skillLocksmith
-    ],
-    [
-      skillCallForReinforcements,
-      skillRide,
-      skillCook,
-      skillErudition,
-      skillSwim,
-      skillFirstAid
-    ]);
+    [skillAmateurHandyman, skillDefuse, skillBlacksmith, skillLikeNothing, skillLocksmith],
+    [skillCallForReinforcements, skillRide, skillCook, skillErudition, skillSwim, skillFirstAid]);
+
 final Job jobPirate = new Job(
     'Pirate',
     [11, 20],
@@ -301,14 +234,7 @@ final Job jobPirate = new Job(
     0,
     3,
     [specializationAny],
-    [
-      skillCallForReinforcements,
-      skillBarrelCall,
-      skillScamAndSwindling,
-      skillFurl,
-      skillClimb,
-      skillSwim
-    ],
+    [skillCallForReinforcements, skillBarrelCall, skillScamAndSwindling, skillFurl, skillClimb, skillSwim],
     [
       skillDetect,
       skillDiggingThroughTrashCans,
@@ -317,6 +243,7 @@ final Job jobPirate = new Job(
       skillBeggingAndWhining,
       skillShootProperly
     ]);
+
 final Job jobBourgeois = new Job(
     'Bourgeois',
     [8, 20],
@@ -330,21 +257,9 @@ final Job jobBourgeois = new Job(
     0,
     0,
     [specializationAny],
-    [
-      skillCallForReinforcements,
-      skillAttractsMonster,
-      skillRide,
-      skillErudition,
-      skillAnnoying
-    ],
-    [
-      skillScamAndSwindling,
-      skillGroupLeader,
-      skillJugglingAndDancing,
-      skillMistrust,
-      skillSwim,
-      skillWeirdRunes
-    ]);
+    [skillCallForReinforcements, skillAttractsMonster, skillRide, skillErudition, skillAnnoying],
+    [skillScamAndSwindling, skillGroupLeader, skillJugglingAndDancing, skillMistrust, skillSwim, skillWeirdRunes]);
+
 /*
 final Job jobOfficer = new Job(
     'Officier',
@@ -483,6 +398,7 @@ final Job jobOfficer = new Job(
       skillCoward,
       skillSurviving
     ]);
+
 final Job jobScout = new Job(
     'Eclaireur',
     [8, 20],
@@ -620,6 +536,7 @@ final Job jobScout = new Job(
       skillCoward,
       skillSurviving
     ]);
+
 final Job jobHeavySoldier = new Job(
     'Soldat Lourd',
     [11, 20],
@@ -757,6 +674,7 @@ final Job jobHeavySoldier = new Job(
       skillCoward,
       skillSurviving
     ]);
+
 final Job jobDoctor = new Job(
     'Medecin',
     [8, 20],
@@ -894,6 +812,7 @@ final Job jobDoctor = new Job(
       skillCoward,
       skillSurviving
     ]);
+
 final Job jobGunsmith = new Job(
     'Armurier',
     [8, 20],
@@ -1032,6 +951,7 @@ final Job jobGunsmith = new Job(
       skillSurviving
     ]);
 */
+
 final Job jobTorturer = new Job(
     'Bourreau',
     [8, 20],
@@ -1068,6 +988,7 @@ final Job jobTorturer = new Job(
       skillShootProperly,
       skillPainIsForTheWeak
     ]);
+
 final Job jobMyrmidon = new Job(
     'Sbire',
     [8, 10],
@@ -1136,5 +1057,6 @@ final Job jobMyrmidon = new Job(
       skillIronGrip,
       skillTormentor
     ]);
-final Job jobAny = new Job('Aucun', [8, 20], [8, 20], [8, 20], [8, 20], [8, 20],
-    0, 0, 0, 0, 0, [specializationAny], [], []);
+
+final Job jobAny =
+    new Job('Aucun', [8, 20], [8, 20], [8, 20], [8, 20], [8, 20], 0, 0, 0, 0, 0, [specializationAny], [], []);

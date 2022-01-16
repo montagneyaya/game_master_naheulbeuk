@@ -81,6 +81,7 @@ final People peopleHuman = new People(
       skillFallIntoTraps,
       skillPainIsForTheWeak
     ]);
+
 final People peopleBarbarian = new People(
     'Barbare',
     [12, 20],
@@ -106,6 +107,7 @@ final People peopleBarbarian = new People(
       skillShootProperly,
       skillPainIsForTheWeak
     ]);
+
 final People peopleDwarf = new People(
     'Nain',
     [11, 20],
@@ -118,18 +120,7 @@ final People peopleDwarf = new People(
     35,
     0,
     0,
-    [
-      jobFighter,
-      jobNinja,
-      jobRogue,
-      jobRanger,
-      jobDealer,
-      jobEngineer,
-      jobPirate,
-      jobBourgeois,
-      jobTorturer,
-      jobAny
-    ],
+    [jobFighter, jobNinja, jobRogue, jobRanger, jobDealer, jobEngineer, jobPirate, jobBourgeois, jobTorturer, jobAny],
     [skillBarrelCall, skillTreasureInstinct, skillAnnoying, skillSkinflint],
     [
       skillCallForReinforcements,
@@ -143,6 +134,7 @@ final People peopleDwarf = new People(
       skillShootProperly,
       skillPainIsForTheWeak
     ]);
+
 final People peopleHighElf = new People(
     'Haut Elfe',
     [8, 20],
@@ -172,14 +164,8 @@ final People peopleHighElf = new People(
       jobAny
     ],
     [skillErudition, skillWeirdRunes, skillFallIntoTraps],
-    [
-      skillGroupLeader,
-      skillRide,
-      skillJugglingAndDancing,
-      skillSwim,
-      skillFirstAid,
-      skillShootProperly
-    ]);
+    [skillGroupLeader, skillRide, skillJugglingAndDancing, skillSwim, skillFirstAid, skillShootProperly]);
+
 final People peopleHalfElf = new People(
     'Demi Elfe',
     [8, 20],
@@ -220,6 +206,7 @@ final People peopleHalfElf = new People(
       skillSwim,
       skillShootProperly
     ]);
+
 final People peopleSilvanElf = new People(
     'Elfe Sylvain',
     [8, 20],
@@ -247,21 +234,9 @@ final People peopleSilvanElf = new People(
       jobTorturer,
       jobAny
     ],
-    [
-      skillRide,
-      skillTouchingNaivety,
-      skillFirstAid,
-      skillShootProperly,
-      skillFallIntoTraps
-    ],
-    [
-      skillUnderstandAnimals,
-      skillSilentMovement,
-      skillJugglingAndDancing,
-      skillSwim,
-      skillTrack,
-      skillHollowHead
-    ]);
+    [skillRide, skillTouchingNaivety, skillFirstAid, skillShootProperly, skillFallIntoTraps],
+    [skillUnderstandAnimals, skillSilentMovement, skillJugglingAndDancing, skillSwim, skillTrack, skillHollowHead]);
+
 final People peopleDarkElf = new People(
     'Elfe Noir',
     [8, 20],
@@ -302,6 +277,7 @@ final People peopleDarkElf = new People(
       skillTrack,
       skillWeirdRunes
     ]);
+
 final People peopleOrc = new People(
     'Orque',
     [8, 20],
@@ -314,16 +290,7 @@ final People peopleOrc = new People(
     35,
     0,
     0,
-    [
-      jobFighter,
-      jobNinja,
-      jobRogue,
-      jobRanger,
-      jobPirate,
-      jobTorturer,
-      jobMyrmidon,
-      jobAny
-    ],
+    [jobFighter, jobNinja, jobRogue, jobRanger, jobPirate, jobTorturer, jobMyrmidon, jobAny],
     [
       skillAgoraphobia,
       skillSavageCall,
@@ -333,13 +300,8 @@ final People peopleOrc = new People(
       skillFeetSmell,
       skillHollowHead
     ],
-    [
-      skillStuffingWeapons,
-      skillMessUp,
-      skillDiggingThroughTrashCans,
-      skillIntimidate,
-      skillPainIsForTheWeak
-    ]);
+    [skillStuffingWeapons, skillMessUp, skillDiggingThroughTrashCans, skillIntimidate, skillPainIsForTheWeak]);
+
 final People peopleHalfOrc = new People(
     'Demi Orque',
     [8, 20],
@@ -352,22 +314,8 @@ final People peopleHalfOrc = new People(
     35,
     0,
     0,
-    [
-      jobFighter,
-      jobRanger,
-      jobBard,
-      jobPirate,
-      jobTorturer,
-      jobMyrmidon,
-      jobAny
-    ],
-    [
-      skillAgoraphobia,
-      skillMessUp,
-      skillSurvivalInstinct,
-      skillFeetSmell,
-      skillHollowHead
-    ],
+    [jobFighter, jobRanger, jobBard, jobPirate, jobTorturer, jobMyrmidon, jobAny],
+    [skillAgoraphobia, skillMessUp, skillSurvivalInstinct, skillFeetSmell, skillHollowHead],
     [
       skillStuffingWeapons,
       skillInYourFace,
@@ -378,6 +326,7 @@ final People peopleHalfOrc = new People(
       skillShootProperly,
       skillPainIsForTheWeak
     ]);
+
 final People peopleGoblin = new People(
     'Gobelin',
     [8, 10],
@@ -402,6 +351,7 @@ final People peopleGoblin = new People(
       skillHollowHead
     ],
     [skillAmateurHandyman, skillDefuse, skillClimb, skillBlacksmith]);
+
 final People peopleOgre = new People(
     'Ogre',
     [8, 20],
@@ -424,13 +374,8 @@ final People peopleOgre = new People(
       skillFeetSmell,
       skillHollowHead
     ],
-    [
-      skillInYourFace,
-      skillMessUp,
-      skillDiggingThroughTrashCans,
-      skillMonsterLanguages,
-      skillPainIsForTheWeak
-    ]);
+    [skillInYourFace, skillMessUp, skillDiggingThroughTrashCans, skillMonsterLanguages, skillPainIsForTheWeak]);
+
 final People peopleHobbit = new People(
     'Semi-Homme',
     [12, 20],
@@ -458,13 +403,7 @@ final People peopleHobbit = new People(
       jobTorturer,
       jobAny
     ],
-    [
-      skillBarrelCall,
-      skillAttractsMonster,
-      skillCook,
-      skillSurvivalInstinct,
-      skillLikeNothing
-    ],
+    [skillBarrelCall, skillAttractsMonster, skillCook, skillSurvivalInstinct, skillLikeNothing],
     [
       skillCallForReinforcements,
       skillFurl,
@@ -476,6 +415,7 @@ final People peopleHobbit = new People(
       skillBeggingAndWhining,
       skillShootProperly
     ]);
+
 final People peopleGnome = new People(
     'Gnome',
     [8, 20],
@@ -488,25 +428,8 @@ final People peopleGnome = new People(
     15,
     2,
     2,
-    [
-      jobNinja,
-      jobRogue,
-      jobRanger,
-      jobBard,
-      jobEngineer,
-      jobPirate,
-      jobTorturer,
-      jobMyrmidon,
-      jobAny
-    ],
-    [
-      skillAmbidextrous,
-      skillCallForReinforcements,
-      skillRide,
-      skillFurl,
-      skillSilentMovement,
-      skillTreasureInstinct
-    ],
+    [jobNinja, jobRogue, jobRanger, jobBard, jobEngineer, jobPirate, jobTorturer, jobMyrmidon, jobAny],
+    [skillAmbidextrous, skillCallForReinforcements, skillRide, skillFurl, skillSilentMovement, skillTreasureInstinct],
     [
       skillUnderstandAnimals,
       skillDefuse,
@@ -517,6 +440,7 @@ final People peopleGnome = new People(
       skillSwim,
       skillLocksmith
     ]);
+
 final People peopleMafiaDwarf = new People(
     'Nain de la Mafia',
     [10, 20],
@@ -553,6 +477,7 @@ final People peopleMafiaDwarf = new People(
       skillLocksmith,
       skillShootProperly
     ]);
+
 final People peopleSylderianAmazon = new People(
     'Amazone Sylderienne',
     [12, 20],
@@ -578,14 +503,8 @@ final People peopleSylderianAmazon = new People(
       skillIgnorant,
       skillSurvivor
     ],
-    [
-      skillClimb,
-      skillSurvivalInstinct,
-      skillIntimidate,
-      skillSwim,
-      skillTrack,
-      skillShootProperly
-    ]);
+    [skillClimb, skillSurvivalInstinct, skillIntimidate, skillSwim, skillTrack, skillShootProperly]);
+
 final People peopleMonster = new People(
     'Monstre',
     [0, 0],
@@ -678,3 +597,21 @@ final People peopleMonster = new People(
       skillCoward,
       skillSurviving
     ]);
+
+final List<People> peopleEnum = [
+  peopleHuman,
+  peopleBarbarian,
+  peopleDwarf,
+  peopleHighElf,
+  peopleHalfElf,
+  peopleSilvanElf,
+  peopleDarkElf,
+  peopleOrc,
+  peopleHalfOrc,
+  peopleGoblin,
+  peopleOgre,
+  peopleHobbit,
+  peopleGnome,
+  peopleMafiaDwarf,
+  peopleSylderianAmazon
+];

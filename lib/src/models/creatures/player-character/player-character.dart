@@ -71,29 +71,22 @@ class PlayerCharacter extends Creatures {
   int get modifyCourage => this._modifyCourage;
   set modifyCourage(int value) {
     this._modifyCourage = value;
-    this.spellResistance =
-        ((value + this.modifyIntellect + this.modifyStrength) / 3).ceil();
+    this.spellResistance = ((value + this.modifyIntellect + this.modifyStrength) / 3).ceil();
   }
 
   int get modifyIntellect => this._modifyIntellect;
   set modifyIntellect(int value) {
     this._modifyIntellect = value;
-    if (this.job == jobCleric ||
-        this.job == jobWizard ||
-        this.job == jobPaladin) {
+    if (this.job == jobCleric || this.job == jobWizard || this.job == jobPaladin) {
       this.physicalSpell = ((value + this.modifyDexterity) / 2).ceil();
       this.psychicSpell = ((value + this.modifyCharisma) / 2).ceil();
     }
     if (this.job == jobEngineer) {
       this.engineer = ((value + this.modifyDexterity) / 2).ceil();
     }
-    this.spellResistance =
-        ((this.modifyCourage + value + this.modifyStrength) / 3).ceil();
+    this.spellResistance = ((this.modifyCourage + value + this.modifyStrength) / 3).ceil();
     if (value > 12) {
-      this
-          .addSpellDamages
-          .where((element) => element.txtDamages == 'intelligence (INT)')
-          .forEach((element) {
+      this.addSpellDamages.where((element) => element.txtDamages == 'intelligence (INT)').forEach((element) {
         this.addSpellDamages.remove(element);
       });
       this.addSpellDamages.add(this._intellectSup(value));
@@ -103,9 +96,7 @@ class PlayerCharacter extends Creatures {
   int get modifyCharisma => this._modifyCharisma;
   set modifyCharisma(int value) {
     this._modifyCharisma = value;
-    if (this.job == jobCleric ||
-        this.job == jobWizard ||
-        this.job == jobPaladin) {
+    if (this.job == jobCleric || this.job == jobWizard || this.job == jobPaladin) {
       this.psychicSpell = ((this.modifyIntellect + value) / 2).ceil();
     }
   }
@@ -113,9 +104,7 @@ class PlayerCharacter extends Creatures {
   int get modifyDexterity => this._modifyDexterity;
   set modifyDexterity(int value) {
     this._modifyDexterity = value;
-    if (this.job == jobCleric ||
-        this.job == jobWizard ||
-        this.job == jobPaladin) {
+    if (this.job == jobCleric || this.job == jobWizard || this.job == jobPaladin) {
       this.physicalSpell = ((this.modifyIntellect + value) / 2).ceil();
     }
     if (this.job == jobEngineer) {
@@ -126,13 +115,9 @@ class PlayerCharacter extends Creatures {
   int get modifyStrength => this._modifyStrength;
   set modifyStrength(int value) {
     this._modifyStrength = value;
-    this.spellResistance =
-        ((this.modifyCourage + this.modifyIntellect + value) / 3).ceil();
+    this.spellResistance = ((this.modifyCourage + this.modifyIntellect + value) / 3).ceil();
     if (value < 9 || value > 12) {
-      this
-          .addNaturalDamages
-          .where((element) => element.txtDamages == 'Force (FO)')
-          .forEach((element) {
+      this.addNaturalDamages.where((element) => element.txtDamages == 'Force (FO)').forEach((element) {
         this.addNaturalDamages.remove(element);
       });
       this.addNaturalDamages.add(this._strengthSup(value));

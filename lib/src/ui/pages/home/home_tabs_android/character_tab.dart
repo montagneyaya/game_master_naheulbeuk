@@ -9,14 +9,13 @@ Widget _characterTab(BuildContext context) {
           onPressed: () {
             Navigator.pushNamed(context, '/home/create-character');
           },
-            child: Row(
-              children: [
-                Icon(Icons.add),
-                Text('Ajouter un personnage'),
-              ],
-            ),
+          child: Row(
+            children: [
+              Icon(Icons.add),
+              Text('Ajouter un personnage'),
+            ],
           ),
-
+        ),
         ListView(
           shrinkWrap: true,
           children: [],

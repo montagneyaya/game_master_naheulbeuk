@@ -21,10 +21,7 @@ class IconsDices {
   static const _kFontFam = 'IconsDices';
   static const String? _kFontPkg = null;
 
-  static const IconData dice4 =
-      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData dice6 =
-      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData dice6_2 =
-      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dice4 = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dice6 = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dice6_2 = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

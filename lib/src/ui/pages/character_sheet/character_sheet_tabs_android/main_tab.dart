@@ -26,8 +26,7 @@ Widget _mainTab(BuildContext context) {
                       width: 160,
                       height: 200,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Theme.of(context).colorScheme.primary),
+                        border: Border.all(color: Theme.of(context).colorScheme.primary),
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),

@@ -9,8 +9,7 @@ class BaseAndroid extends StatelessWidget {
   final TabBar? bottomAndroid;
   final BottomNavigationBar? bottomNavigationBar;
 
-  BaseAndroid(this.content, this.backgroundContent, this.needDrawer,
-      this.bottomAndroid, this.bottomNavigationBar);
+  BaseAndroid(this.content, this.backgroundContent, this.needDrawer, this.bottomAndroid, this.bottomNavigationBar);
 
   @override
   Widget build(BuildContext context) {

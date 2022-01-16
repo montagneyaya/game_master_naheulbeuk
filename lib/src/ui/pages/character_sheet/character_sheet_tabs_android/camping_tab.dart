@@ -49,20 +49,11 @@ Widget _campingTab(BuildContext context) {
                     Expanded(child: Text('Poids')),
                   ],
                 ),
-                Expanded(
-                    child: Padding(
-                        padding: EdgeInsets.only(top: 8),
-                        child: Text('Tente'))),
+                Expanded(child: Padding(padding: EdgeInsets.only(top: 8), child: Text('Tente'))),
                 _campingTable(context),
-                Expanded(
-                    child: Padding(
-                        padding: EdgeInsets.only(top: 8),
-                        child: Text('Matelas'))),
+                Expanded(child: Padding(padding: EdgeInsets.only(top: 8), child: Text('Matelas'))),
                 _campingTable(context),
-                Expanded(
-                    child: Padding(
-                        padding: EdgeInsets.only(top: 8),
-                        child: Text('Couverture'))),
+                Expanded(child: Padding(padding: EdgeInsets.only(top: 8), child: Text('Couverture'))),
                 _campingTable(context),
                 Spacer(),
                 Expanded(child: Text('Bouffes et boissons')),

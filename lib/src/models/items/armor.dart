@@ -8,7 +8,7 @@ class Armor extends Item {
   int magicPR = 0;
   int breakFight = 6;
 
-  Armor(String nameItem, int price, int weight, ItemsType type, this.location,
-      this.naturalPR, this.magicPR, this.breakFight)
+  Armor(String nameItem, int price, int weight, ItemsType type, this.location, this.naturalPR, this.magicPR,
+      this.breakFight)
       : super(nameItem, price, weight, type);
 }

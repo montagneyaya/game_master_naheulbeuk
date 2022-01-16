@@ -17,30 +17,11 @@ class Job {
   List<Skill> inheritedSkills;
   List<Skill> optionalSkills;
 
-  Job(
-      this.job,
-      this.courage,
-      this.intellect,
-      this.charisma,
-      this.dexterity,
-      this.strength,
-      this.attack,
-      this.parry,
-      this.hp,
-      this.ap,
-      this.pr,
-      this.specialization,
-      this.inheritedSkills,
-      this.optionalSkills);
+  Job(this.job, this.courage, this.intellect, this.charisma, this.dexterity, this.strength, this.attack, this.parry,
+      this.hp, this.ap, this.pr, this.specialization, this.inheritedSkills, this.optionalSkills);
 
   List<List<int>> characteristics() {
-    return [
-      this.courage,
-      this.intellect,
-      this.charisma,
-      this.dexterity,
-      this.strength
-    ];
+    return [this.courage, this.intellect, this.charisma, this.dexterity, this.strength];
   }
 
   List<int> fight() {

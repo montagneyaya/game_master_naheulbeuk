@@ -9,12 +9,10 @@ part 'package:game_master_naheulbeuk/src/ui/pages/character_sheet/character_shee
 
 class CharacterSheetEquipSpecAndroid extends StatefulWidget {
   @override
-  _CharacterSheetEquipSpecAndroidState createState() =>
-      _CharacterSheetEquipSpecAndroidState();
+  _CharacterSheetEquipSpecAndroidState createState() => _CharacterSheetEquipSpecAndroidState();
 }
 
-class _CharacterSheetEquipSpecAndroidState
-    extends State<CharacterSheetEquipSpecAndroid> {
+class _CharacterSheetEquipSpecAndroidState extends State<CharacterSheetEquipSpecAndroid> {
   @override
   void initState() {
     super.initState();

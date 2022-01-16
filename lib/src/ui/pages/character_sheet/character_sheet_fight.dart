@@ -50,11 +50,7 @@ class CharacterSheetFightPage extends StatelessWidget {
         break;
       case Devices.androidHandset:
         return BaseAndroid(
-            _content(context),
-            null,
-            true,
-            tabBarAndroid(context, fightTab),
-            bottomHomeNavigation(1, context));
+            _content(context), null, true, tabBarAndroid(context, fightTab), bottomHomeNavigation(1, context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;
@@ -90,8 +86,7 @@ class CharacterSheetFightPage extends StatelessWidget {
         // TODO: Handle this case.
         break;
       case Devices.androidHandset:
-        return DefaultTabController(
-            length: 3, child: _characterSheetBase(context));
+        return DefaultTabController(length: 3, child: _characterSheetBase(context));
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

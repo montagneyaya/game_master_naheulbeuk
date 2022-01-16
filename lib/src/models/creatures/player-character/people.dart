@@ -17,30 +17,11 @@ class People {
   List<Skill> birthSkills;
   List<Skill> optionalSkills;
 
-  People(
-      this.people,
-      this.courage,
-      this.intellect,
-      this.charisma,
-      this.dexterity,
-      this.strength,
-      this.attack,
-      this.parry,
-      this.hp,
-      this.pr,
-      this.load,
-      this.jobs,
-      this.birthSkills,
-      this.optionalSkills);
+  People(this.people, this.courage, this.intellect, this.charisma, this.dexterity, this.strength, this.attack,
+      this.parry, this.hp, this.pr, this.load, this.jobs, this.birthSkills, this.optionalSkills);
 
   List<List<int>> characteristics() {
-    return [
-      this.courage,
-      this.intellect,
-      this.charisma,
-      this.dexterity,
-      this.strength
-    ];
+    return [this.courage, this.intellect, this.charisma, this.dexterity, this.strength];
   }
 
   List<int> fight() {

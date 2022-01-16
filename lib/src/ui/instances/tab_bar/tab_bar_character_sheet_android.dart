@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-List<Widget> mainTab = [
+List<Tab> mainTab = [
   Tab(text: 'Fiche'),
   Tab(text: 'Statistiques'),
   Tab(text: 'Competences'),
 ];
 
-List<Widget> fightTab = [
+List<Tab> fightTab = [
   Tab(text: 'Armes'),
   Tab(text: 'Armures'),
   Tab(text: 'Baston'),
 ];
 
-List<Widget> equipmentTab = [
+List<Tab> equipmentTab = [
   Tab(text: 'Sac a dos'),
   Tab(text: 'Camping'),
   Tab(text: 'Butins'),
 ];
 
-List<Widget> jobEquipmentTab = [
+List<Tab> jobEquipmentTab = [
   Tab(
     child: Column(
       children: [
@@ -45,6 +45,6 @@ List<Widget> jobEquipmentTab = [
   ),
 ];
 
-List<Widget> pouchTab = [
+List<Tab> pouchTab = [
   Tab(text: 'Bourse'),
 ];

@@ -19,15 +19,16 @@ class HomeWeb extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                text:
-                    '''    Bienvenue sur la terre de Fangh où vous pourrez trouver l'aventure!
+                text: '''    Bienvenue sur la terre de Fangh où vous pourrez trouver l'aventure!
     Vous trouverez des outils pour faire des parties de jeux de rôle dans ''',
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               TextSpan(
                 text: '''l'univers de Naheulbeuk''',
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    color: Theme.of(context).colorScheme.secondaryVariant),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: Theme.of(context).colorScheme.secondaryVariant),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch('http://www.naheulbeuk.com/');
@@ -39,8 +40,10 @@ class HomeWeb extends StatelessWidget {
               ),
               TextSpan(
                 text: '''univers''',
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    color: Theme.of(context).colorScheme.secondaryVariant),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: Theme.of(context).colorScheme.secondaryVariant),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch('http://www.penofchaos.com/warham/donjon.htm');
@@ -52,8 +55,10 @@ class HomeWeb extends StatelessWidget {
               ),
               TextSpan(
                 text: '''Pen Of Chaos''',
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    color: Theme.of(context).colorScheme.secondaryVariant),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: Theme.of(context).colorScheme.secondaryVariant),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch('http://www.penofchaos.com/');

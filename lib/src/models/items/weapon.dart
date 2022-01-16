@@ -6,8 +6,7 @@ class Weapon extends Item {
   Impact impactPoint;
   int breakFight = 6;
 
-  Weapon(String nameItem, int price, int weight, ItemsType type,
-      this.impactPoint, this.breakFight)
+  Weapon(String nameItem, int price, int weight, ItemsType type, this.impactPoint, this.breakFight)
       : super(nameItem, price, weight, type);
 }
 

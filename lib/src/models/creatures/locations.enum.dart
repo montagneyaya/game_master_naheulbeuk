@@ -1,9 +1,1 @@
-enum Location {
-  locationHead,
-  locationArms,
-  locationHands,
-  locationChest,
-  locationShield,
-  locationLegs,
-  locationFeet
-}
+enum Location { locationHead, locationArms, locationHands, locationChest, locationShield, locationLegs, locationFeet }

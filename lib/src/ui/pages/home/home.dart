@@ -48,11 +48,9 @@ class HomePage extends StatelessWidget {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-        return BaseWeb(
-            _content(context), background(context, imageWeb, BoxFit.cover));
+        return BaseWeb(_content(context), background(context, imageWeb, BoxFit.cover));
       case Devices.androidHandset:
-        return BaseAndroid(_content(context), null, true,
-            tabBarAndroid(context, homeTab), null);
+        return BaseAndroid(_content(context), null, true, tabBarAndroid(context, homeTab), null);
       case Devices.iOSHandset:
         // TODO: Handle this case.
         break;

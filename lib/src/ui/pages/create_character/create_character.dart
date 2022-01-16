@@ -46,8 +46,7 @@ class CreateCharacterPage extends StatelessWidget {
     final Device device = Device();
     switch (device.device(context)) {
       case Devices.web:
-        return BaseWeb(
-            _content(context), background(context, imageWeb, BoxFit.cover));
+        return BaseWeb(_content(context), background(context, imageWeb, BoxFit.cover));
       case Devices.androidHandset:
         return BaseAndroid(_content(context), null, false, null, null);
       case Devices.iOSHandset:

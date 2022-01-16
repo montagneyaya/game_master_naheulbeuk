@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List<Widget> homeTab = [
+List<Tab> homeTab = [
   Tab(text: 'Personnages'),
   Tab(text: 'Aventures'),
   Tab(
