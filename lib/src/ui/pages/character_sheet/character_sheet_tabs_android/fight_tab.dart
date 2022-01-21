@@ -4,23 +4,37 @@ Widget _fightTable(BuildContext context) {
   return Expanded(
     child: Row(
       children: [
-        Expanded(child: textField(context)),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+          child: TextField(
+            style: Theme.of(context).textTheme.bodyText2,
+            textAlignVertical: TextAlignVertical.bottom,
           ),
         ),
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
           ),
         ),
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
           ),
         ),
       ],
@@ -32,17 +46,28 @@ Widget _fightTable2(BuildContext context) {
   return Expanded(
     child: Row(
       children: [
-        Expanded(child: textField(context)),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+          child: TextField(
+            style: Theme.of(context).textTheme.bodyText2,
+            textAlignVertical: TextAlignVertical.bottom,
           ),
         ),
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
           ),
         ),
       ],
@@ -149,14 +174,20 @@ Widget _fightTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8, right: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                       Text('Modif.'),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -176,7 +207,10 @@ Widget _fightTab(BuildContext context) {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 8),
-                                      child: textField(context),
+                                      child: TextField(
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -189,7 +223,10 @@ Widget _fightTab(BuildContext context) {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 8),
-                                      child: textField(context),
+                                      child: TextField(
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -207,7 +244,10 @@ Widget _fightTab(BuildContext context) {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 8),
-                                      child: textField(context),
+                                      child: TextField(
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -220,7 +260,10 @@ Widget _fightTab(BuildContext context) {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 8),
-                                      child: textField(context),
+                                      child: TextField(
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -241,7 +284,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -254,7 +300,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -267,7 +316,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -280,7 +332,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -293,7 +348,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -306,7 +364,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -319,7 +380,10 @@ Widget _fightTab(BuildContext context) {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 8),
-                                        child: textField(context),
+                                        child: TextField(
+                                          style: Theme.of(context).textTheme.bodyText2,
+                                          textAlignVertical: TextAlignVertical.bottom,
+                                        ),
                                       ),
                                     ),
                                   ],

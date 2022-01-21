@@ -20,7 +20,7 @@ class Job {
   Job(this.job, this.courage, this.intellect, this.charisma, this.dexterity, this.strength, this.attack, this.parry,
       this.hp, this.ap, this.pr, this.specialization, this.inheritedSkills, this.optionalSkills);
 
-  List<List<int>> characteristics() {
+  List<List<int>> statistics() {
     return [this.courage, this.intellect, this.charisma, this.dexterity, this.strength];
   }
 

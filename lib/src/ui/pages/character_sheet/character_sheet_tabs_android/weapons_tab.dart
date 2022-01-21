@@ -12,18 +12,27 @@ Widget _weaponsTable(BuildContext context) {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: textField(context),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: textField(context),
+                      child: TextField(
+                        style: Theme.of(context).textTheme.bodyText2,
+                        textAlignVertical: TextAlignVertical.bottom,
                       ),
                     ),
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(left: 8),
-                        child: textField(context),
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
                       ),
                     ),
                   ],
@@ -36,7 +45,10 @@ Widget _weaponsTable(BuildContext context) {
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(left: 8),
-                        child: textField(context),
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
                       ),
                     ),
                   ],
@@ -123,7 +135,10 @@ Widget _weaponsTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -136,7 +151,10 @@ Widget _weaponsTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],

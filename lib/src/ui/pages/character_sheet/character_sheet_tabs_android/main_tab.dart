@@ -40,7 +40,10 @@ Widget _mainTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 16),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -53,7 +56,10 @@ Widget _mainTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 16),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -66,7 +72,10 @@ Widget _mainTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 16),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -79,20 +88,32 @@ Widget _mainTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 16),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
-                  child: textField(context),
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
                 ),
                 Expanded(
-                  child: textField(context),
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
                 ),
                 Expanded(
-                  child: textField(context),
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
                 ),
                 Expanded(
                   child: Row(
@@ -101,14 +122,20 @@ Widget _mainTab(BuildContext context) {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 16),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
-                  child: textField(context),
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
                 ),
               ],
             ),

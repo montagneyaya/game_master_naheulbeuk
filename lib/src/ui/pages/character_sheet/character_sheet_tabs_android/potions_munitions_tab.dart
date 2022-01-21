@@ -27,12 +27,42 @@ Widget _potionsMunitionsTab(BuildContext context) {
                         child: Column(
                           children: [
                             Expanded(child: Text('Nombre')),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -43,12 +73,42 @@ Widget _potionsMunitionsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Munitions')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -60,12 +120,42 @@ Widget _potionsMunitionsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -82,14 +172,54 @@ Widget _potionsMunitionsTab(BuildContext context) {
                         child: Column(
                           children: [
                             Expanded(child: Text('Doses')),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -100,14 +230,54 @@ Widget _potionsMunitionsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Potions/Poisons')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -119,14 +289,54 @@ Widget _potionsMunitionsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),

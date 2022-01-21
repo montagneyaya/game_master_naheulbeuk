@@ -20,16 +20,66 @@ Widget _treasuresTab(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Butins a revendre et objets de quetes'),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
               ],
             ),
           ),

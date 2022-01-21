@@ -38,8 +38,10 @@ class _SettingAndroidState extends State<SettingAndroid> {
                   children: [
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
-                      title: const Text('Light'),
+                      title: const Text('Clair'),
+                      secondary: Icon(Icons.light_mode),
                       value: ThemeMode.light,
+                      controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,
                       onChanged: (ThemeMode? value) {
                         themeModeNotifier.toggleThemeMode(value);
@@ -47,8 +49,10 @@ class _SettingAndroidState extends State<SettingAndroid> {
                     ),
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
-                      title: const Text('Dark'),
+                      title: const Text('Sombre'),
+                      secondary: Icon(Icons.dark_mode),
                       value: ThemeMode.dark,
+                      controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,
                       onChanged: (ThemeMode? value) {
                         themeModeNotifier.toggleThemeMode(value);
@@ -57,7 +61,9 @@ class _SettingAndroidState extends State<SettingAndroid> {
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
                       title: const Text('Systeme'),
+                      secondary: Icon(Icons.lightbulb),
                       value: ThemeMode.system,
+                      controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,
                       onChanged: (ThemeMode? value) {
                         themeModeNotifier.toggleThemeMode(value);

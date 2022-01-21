@@ -4,18 +4,30 @@ Widget _campingTable(BuildContext context) {
   return Expanded(
     child: Row(
       children: [
-        Expanded(flex: 3, child: textField(context)),
+        Expanded(
+          flex: 3,
+          child: TextField(
+            style: Theme.of(context).textTheme.bodyText2,
+            textAlignVertical: TextAlignVertical.bottom,
+          ),
+        ),
         Expanded(
           flex: 2,
           child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
           ),
         ),
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: textField(context),
+            child: TextField(
+              style: Theme.of(context).textTheme.bodyText2,
+              textAlignVertical: TextAlignVertical.bottom,
+            ),
           ),
         ),
       ],
@@ -57,12 +69,42 @@ Widget _campingTab(BuildContext context) {
                 _campingTable(context),
                 Spacer(),
                 Expanded(child: Text('Bouffes et boissons')),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
               ],
             ),
           ),

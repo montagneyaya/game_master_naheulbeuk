@@ -27,12 +27,42 @@ Widget _objectsTab(BuildContext context) {
                         child: Column(
                           children: [
                             Expanded(child: Text('Objets speciaux')),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -42,12 +72,42 @@ Widget _objectsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Bonus / Effets')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -64,12 +124,42 @@ Widget _objectsTab(BuildContext context) {
                         child: Column(
                           children: [
                             Expanded(child: Text('Charges')),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
-                            Expanded(child: textField(context)),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlignVertical: TextAlignVertical.bottom,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -80,12 +170,42 @@ Widget _objectsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Objets charges')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -97,12 +217,42 @@ Widget _objectsTab(BuildContext context) {
                           child: Column(
                             children: [
                               Expanded(child: Text('Effets')),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
-                              Expanded(child: textField(context)),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                ),
+                              ),
                             ],
                           ),
                         ),

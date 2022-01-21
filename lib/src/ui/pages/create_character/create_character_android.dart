@@ -5,6 +5,8 @@ import 'package:game_master_naheulbeuk/src/models/creatures/player-character/job
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/jobs.enum.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/people.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/peoples.enum.dart';
+import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skill.dart';
+import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skills.enum.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specialization.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specializations.enum.dart';
 import 'package:game_master_naheulbeuk/src/resources/services/dices.service.dart';
@@ -23,6 +25,8 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   final GlobalKey<FormState> _skillsForm = GlobalKey<FormState>();
   final GlobalKey<FormState> _modifyForm = GlobalKey<FormState>();
   final GlobalKey<FormState> _finalForm = GlobalKey<FormState>();
+  final ScrollController _scrollControllerObtain = ScrollController();
+  final ScrollController _scrollControllerChoose = ScrollController();
   late TabController _controller;
 
   //step 1
@@ -31,15 +35,46 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   final TextEditingController _charismaController = TextEditingController();
   final TextEditingController _dexterityController = TextEditingController();
   final TextEditingController _strengthController = TextEditingController();
-  late List<TextEditingController> _statistcsController;
+  late List<TextEditingController> _statisticsController;
 
   //step 2
   late People _peopleController;
   late Job _jobController;
   late Specialization _specializationController;
-  late List<People> _peopleList;
-  late List<Job> _jobList;
-  late List<Specialization> _specializationList;
+  late List<People> _peoplesList;
+  late List<Job> _jobsList;
+  late List<Specialization> _specializationsList;
+
+  //step 3
+  late List<Skill> _skillsObtain;
+  late List<Skill> _skillsChoose;
+  late bool _isHuman;
+  late List<bool> _skillsController;
+
+  //step 4
+  late bool _modifier;
+  late bool _isOgre;
+  late bool _isFighter;
+  late bool _isRanger;
+  late bool _isDealer;
+  late bool _isEngineer;
+  late bool _lowDexterity;
+  late bool _highDexterity;
+  late bool _superPowerful;
+  late int _damageOgre;
+  late int _attackTemp;
+  late int _parryTemp;
+  late int _courageTemp;
+  late int _intellectTemp;
+  late int _charismaTemp;
+  late int _dexterityTemp;
+  late int _strengthTemp;
+  late int _count1;
+  late int _count2;
+  late bool _count2Down;
+  late bool _count2Up;
+  late int _count3;
+  late bool _modifyController;
 
   @override
   void initState() {
@@ -54,14 +89,14 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     });
 
     //step 1
-    _statistcsController = [
+    _statisticsController = [
       _courageController,
       _intellectController,
       _charismaController,
       _dexterityController,
       _strengthController
     ];
-    _statistcsController.forEach((element) {
+    _statisticsController.forEach((element) {
       element.text = '8';
     });
 
@@ -69,15 +104,45 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _peopleController = peopleMonster;
     _jobController = jobAny;
     _specializationController = specializationAny;
-    _peopleList = [];
-    _jobList = [];
-    _specializationList = [];
+    _peoplesList = [];
+    _jobsList = [];
+    _specializationsList = [];
+
+    //step 3
+    _skillsObtain = [];
+    _skillsChoose = [];
+    _isHuman = false;
+    _skillsController = [];
+
+    //step 4
+    _modifier = false;
+    _isOgre = false;
+    _isFighter = false;
+    _isRanger = false;
+    _isEngineer = false;
+    _lowDexterity = false;
+    _highDexterity = false;
+    _superPowerful = false;
+    _damageOgre = 0;
+    _attackTemp = -1;
+    _parryTemp = -1;
+    _courageTemp = -1;
+    _intellectTemp = -1;
+    _charismaTemp = -1;
+    _dexterityTemp = -1;
+    _strengthTemp = -1;
+    _count1 = 3;
+    _count2 = 2;
+    _count2Down = false;
+    _count2Up = false;
+    _count3 = 1;
+    _modifyController = false;
   }
 
   @override
   void dispose() {
     //step 1
-    _statistcsController.forEach((element) {
+    _statisticsController.forEach((element) {
       element.dispose();
     });
     _courageController.dispose();
@@ -117,13 +182,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                           key: _statisticsForm,
                           child: Column(
                             children: [
+                              Text(
+                                'Caracteristiques',
+                                style: Theme.of(context).textTheme.headline5,
+                              ),
                               Expanded(
                                 child: Row(
                                   children: [
                                     Expanded(flex: 2, child: Text('Courage (COU)')),
                                     Expanded(
                                       child: TextFormField(
-                                        controller: _statistcsController[0],
+                                        controller: _statisticsController[0],
                                         style: Theme.of(context).textTheme.bodyText2,
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
@@ -148,7 +217,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           icon: Icon(IconsDices.dice6),
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
-                                            _statistcsController[0].text = value.toString();
+                                            _statisticsController[0].text = value.toString();
                                           },
                                         ),
                                       ),
@@ -162,7 +231,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                     Expanded(flex: 2, child: Text('Intelligence (INT)')),
                                     Expanded(
                                       child: TextFormField(
-                                        controller: _statistcsController[1],
+                                        controller: _statisticsController[1],
                                         style: Theme.of(context).textTheme.bodyText2,
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
@@ -187,7 +256,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           icon: Icon(IconsDices.dice6),
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
-                                            _statistcsController[1].text = value.toString();
+                                            _statisticsController[1].text = value.toString();
                                           },
                                         ),
                                       ),
@@ -201,7 +270,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                     Expanded(flex: 2, child: Text('Charisme (CHA)')),
                                     Expanded(
                                       child: TextFormField(
-                                        controller: _statistcsController[2],
+                                        controller: _statisticsController[2],
                                         style: Theme.of(context).textTheme.bodyText2,
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
@@ -226,7 +295,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           icon: Icon(IconsDices.dice6),
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
-                                            _statistcsController[2].text = value.toString();
+                                            _statisticsController[2].text = value.toString();
                                           },
                                         ),
                                       ),
@@ -240,7 +309,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                     Expanded(flex: 2, child: Text('Adresse (AD)')),
                                     Expanded(
                                       child: TextFormField(
-                                        controller: _statistcsController[3],
+                                        controller: _statisticsController[3],
                                         style: Theme.of(context).textTheme.bodyText2,
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
@@ -265,7 +334,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           icon: Icon(IconsDices.dice6),
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
-                                            _statistcsController[3].text = value.toString();
+                                            _statisticsController[3].text = value.toString();
                                           },
                                         ),
                                       ),
@@ -279,7 +348,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                     Expanded(flex: 2, child: Text('Force (FO)')),
                                     Expanded(
                                       child: TextFormField(
-                                        controller: _statistcsController[4],
+                                        controller: _statisticsController[4],
                                         style: Theme.of(context).textTheme.bodyText2,
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
@@ -304,7 +373,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           icon: Icon(IconsDices.dice6),
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
-                                            _statistcsController[4].text = value.toString();
+                                            _statisticsController[4].text = value.toString();
                                           },
                                         ),
                                       ),
@@ -316,7 +385,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                 child: TextButton(
                                   child: SvgPicture.asset('assets/images/dice20.svg'),
                                   onPressed: () {
-                                    _statistcsController.forEach((element) {
+                                    _statisticsController.forEach((element) {
                                       int value = Dices().d6() + 7;
                                       element.text = value.toString();
                                     });
@@ -335,121 +404,139 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
               //step 2
               Container(
                 decoration: background(context, imageDice, BoxFit.contain),
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).viewInsets.bottom,
-                    ),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxHeight: MediaQuery.of(context).size.height -
-                            Scaffold.of(context).appBarMaxHeight! -
-                            kToolbarHeight -
-                            kBottomNavigationBarHeight,
-                      ),
-                      child: IntrinsicHeight(
-                        child: Form(
-                          key: _characterForm,
-                          child: Column(
-                            children: [
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        children: [
-                                          Text('Origine'),
-                                          Expanded(
-                                            child: DropdownButtonFormField<People>(
-                                              style: Theme.of(context).textTheme.bodyText2,
-                                              value: _peopleController,
-                                              items: _peopleList.map(buildMenuPeople).toList(),
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _peopleController = value!;
-                                                  _jobList = [];
-                                                  for (Job job in _peopleController.jobs) {
-                                                    bool test = false;
-                                                    for (int i = 0; i < 5; i++) {
-                                                      test = int.parse(_statistcsController[i].text) >
-                                                              job.characteristics()[i][0] - 1 &&
-                                                          int.parse(_statistcsController[i].text) <
-                                                              job.characteristics()[i][1] + 1;
-                                                      if (!test) break;
-                                                    }
-                                                    if (test) _jobList.add(job);
-                                                  }
-                                                  _jobController = _jobList[0];
-
-                                                  _specializationList = _jobController.specialization;
-                                                  _specializationController = _specializationList[0];
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        children: [
-                                          Text('Metier'),
-                                          Expanded(
-                                            child: DropdownButtonFormField<Job>(
-                                              style: Theme.of(context).textTheme.bodyText2,
-                                              value: _jobController,
-                                              items: _jobList.map(buildMenuJob).toList(),
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _jobController = value!;
-                                                  _specializationList = _jobController.specialization;
-                                                  _specializationController = _specializationList[0];
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        children: [
-                                          Text('Specialisation'),
-                                          Expanded(
-                                            child: DropdownButtonFormField<Specialization>(
-                                              style: Theme.of(context).textTheme.bodyText2,
-                                              value: _specializationController,
-                                              items: _specializationList.map(buildMenuSpecialization).toList(),
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _specializationController = value!;
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                child: Form(
+                  key: _characterForm,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Personnage',
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       ),
-                    ),
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Origine',
+                                    style: Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                  Expanded(
+                                    child: DropdownButtonFormField<People>(
+                                      style: Theme.of(context).textTheme.bodyText2,
+                                      value: _peopleController,
+                                      items: _peoplesList.map(buildMenuPeople).toList(),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _peopleController = value!;
+                                          _jobsList = [];
+                                          for (Job job in _peopleController.jobs) {
+                                            bool test = false;
+                                            for (int i = 0; i < 5; i++) {
+                                              test = int.parse(_statisticsController[i].text) >
+                                                      job.statistics()[i][0] - 1 &&
+                                                  int.parse(_statisticsController[i].text) < job.statistics()[i][1] + 1;
+                                              if (!test) break;
+                                            }
+                                            if (test) _jobsList.add(job);
+                                          }
+                                          _jobController = _jobsList[0];
+
+                                          _specializationsList = _jobController.specialization;
+                                          _specializationController = _specializationsList[0];
+                                        });
+                                      },
+                                      validator: (value) {
+                                        if (value == null) {
+                                          return 'faite une selection';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Metier',
+                                    style: Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                  Expanded(
+                                    child: DropdownButtonFormField<Job>(
+                                      style: Theme.of(context).textTheme.bodyText2,
+                                      value: _jobController,
+                                      items: _jobsList.map(buildMenuJob).toList(),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _jobController = value!;
+                                          _specializationsList = _jobController.specialization;
+                                          _specializationController = _specializationsList[0];
+                                        });
+                                      },
+                                      validator: (value) {
+                                        if (value == null) {
+                                          return 'faite une selection';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Specialisation',
+                                    style: Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                  Expanded(
+                                    child: DropdownButtonFormField<Specialization>(
+                                      style: Theme.of(context).textTheme.bodyText2,
+                                      value: _specializationController,
+                                      items: _specializationsList.map(buildMenuSpecialization).toList(),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _specializationController = value!;
+                                        });
+                                      },
+                                      validator: (value) {
+                                        if (value == null) {
+                                          return 'faite une selection';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -461,13 +548,158 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   key: _skillsForm,
                   child: Column(
                     children: [
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'taper du texte';
-                          }
-                          return null;
-                        },
+                      Text(
+                        'Competences',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      if (_isHuman == false)
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Compétences acquise',
+                                      style: Theme.of(context).textTheme.subtitle1,
+                                    ),
+                                    Expanded(
+                                      child: Scrollbar(
+                                        isAlwaysShown: true,
+                                        controller: _scrollControllerObtain,
+                                        child: ListView.builder(
+                                          controller: _scrollControllerObtain,
+                                          shrinkWrap: true,
+                                          itemCount: _skillsObtain.length,
+                                          itemBuilder: (BuildContext context, int index) {
+                                            return ListTile(
+                                              title: Text(
+                                                _skillsObtain[index].skill,
+                                                style: Theme.of(context).textTheme.bodyText2,
+                                              ),
+                                              onTap: () {
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return AlertDialog(
+                                                      backgroundColor: Theme.of(context).colorScheme.surface,
+                                                      title: Text(_skillsObtain[index].skill),
+                                                      content: SingleChildScrollView(
+                                                        child: Text(
+                                                          _skillsObtain[index].described,
+                                                          style: Theme.of(context).textTheme.bodyText2,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    _isHuman
+                                        ? 'Compétences à sélectionner (en choisir 4)'
+                                        : 'Compétences à sélectionner (en choisir 2)',
+                                    style: Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                  Expanded(
+                                    child: FormField(
+                                      builder: (FormFieldState<bool> field) {
+                                        return Scrollbar(
+                                          isAlwaysShown: true,
+                                          controller: _scrollControllerChoose,
+                                          child: ListView.builder(
+                                            controller: _scrollControllerChoose,
+                                            shrinkWrap: true,
+                                            itemCount: _skillsChoose.length,
+                                            itemBuilder: (BuildContext context, int index) {
+                                              return Row(
+                                                children: [
+                                                  Checkbox(
+                                                    activeColor: Theme.of(context).colorScheme.primary,
+                                                    value: _skillsController[index],
+                                                    onChanged: (value) {
+                                                      setState(() {
+                                                        _skillsController[index] = value!;
+                                                        _skillsChoose[index].selected = value;
+                                                      });
+                                                    },
+                                                  ),
+                                                  Expanded(
+                                                    child: ListTile(
+                                                      title: Text(
+                                                        _skillsChoose[index].skill,
+                                                        style: Theme.of(context).textTheme.bodyText2,
+                                                      ),
+                                                      onTap: () {
+                                                        showDialog(
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return AlertDialog(
+                                                              backgroundColor: Theme.of(context).colorScheme.surface,
+                                                              title: Text(_skillsChoose[index].skill),
+                                                              content: SingleChildScrollView(
+                                                                child: Text(
+                                                                  _skillsChoose[index].described,
+                                                                  style: Theme.of(context).textTheme.bodyText2,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        );
+                                      },
+                                      validator: (skillsSelected) {
+                                        skillsSelected = _skillsController.where((element) => element == true).length;
+                                        if (_isHuman && skillsSelected == 4) return null;
+                                        if (!_isHuman && skillsSelected == 2) return null;
+                                        if (_isHuman && skillsSelected != 4) {
+                                          ScaffoldMessenger.of(context).showSnackBar(
+                                            SnackBar(
+                                              content: const Text('Selectionner 4 competences'),
+                                            ),
+                                          );
+                                          return 'Selectionner 4 competences';
+                                        }
+                                        if (!_isHuman && skillsSelected != 2) {
+                                          ScaffoldMessenger.of(context).showSnackBar(
+                                            SnackBar(
+                                              content: const Text('Selectionner 2 competences'),
+                                            ),
+                                          );
+                                          return 'Selectionner 2 competences';
+                                        }
+                                        return 'erreur';
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -481,14 +713,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   key: _modifyForm,
                   child: Column(
                     children: [
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'taper du texte';
-                          }
-                          return null;
-                        },
-                      ),
+                      Text('Modificateur'),
                     ],
                   ),
                 ),
@@ -550,9 +775,9 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
               onPressed: () {
                 //step 1 to step 2
                 if (_controller.index == 0 && _statisticsForm.currentState!.validate()) {
-                  _peopleList = [];
-                  _jobList = [];
-                  _specializationList = [];
+                  _peoplesList = [];
+                  _jobsList = [];
+                  _specializationsList = [];
                   _peopleController = peopleMonster;
                   _jobController = jobAny;
                   _specializationController = specializationAny;
@@ -560,38 +785,142 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   for (People people in peopleEnum) {
                     bool test = false;
                     for (int i = 0; i < 5; i++) {
-                      test = int.parse(_statistcsController[i].text) > people.characteristics()[i][0] - 1 &&
-                          int.parse(_statistcsController[i].text) < people.characteristics()[i][1] + 1;
+                      test = int.parse(_statisticsController[i].text) > people.statistics()[i][0] - 1 &&
+                          int.parse(_statisticsController[i].text) < people.statistics()[i][1] + 1;
                       if (!test) break;
                     }
-                    if (test) _peopleList.add(people);
+                    if (test) _peoplesList.add(people);
                   }
-                  _peopleController = _peopleList[0];
+                  _peopleController = _peoplesList[0];
 
                   for (Job job in _peopleController.jobs) {
                     bool test = false;
                     for (int i = 0; i < 5; i++) {
-                      test = int.parse(_statistcsController[i].text) > job.characteristics()[i][0] - 1 &&
-                          int.parse(_statistcsController[i].text) < job.characteristics()[i][1] + 1;
+                      test = int.parse(_statisticsController[i].text) > job.statistics()[i][0] - 1 &&
+                          int.parse(_statisticsController[i].text) < job.statistics()[i][1] + 1;
                       if (!test) break;
                     }
-                    if (test) _jobList.add(job);
+                    if (test) _jobsList.add(job);
                   }
-                  _jobController = _jobList[0];
+                  _jobController = _jobsList[0];
 
-                  _specializationList = _jobController.specialization;
-                  _specializationController = _specializationList[0];
+                  _specializationsList = _jobController.specialization;
+                  _specializationController = _specializationsList[0];
 
                   _controller.animateTo(_controller.index + 1);
                 }
 
                 //step 2 to step 3
                 if (_controller.index == 1 && _characterForm.currentState!.validate()) {
+                  List<Skill> _skillsPeopleObtain = [];
+                  List<Skill> _skillsPeopleChoose = [];
+                  List<Skill> _skillsJobObtain = [];
+                  List<Skill> _skillsJobChoose = [];
+                  _skillsController = [];
+                  _skillsObtain = [];
+                  _skillsChoose = [];
+                  _isHuman = false;
+                  skillEnum.forEach((element) {
+                    element.isSelect(false);
+                  });
+                  if (_peopleController != peopleHuman) {
+                    _skillsPeopleObtain = _peopleController.birthSkills;
+                    _skillsPeopleChoose = _peopleController.optionalSkills;
+                  }
+                  _skillsJobObtain = _jobController.inheritedSkills;
+                  _skillsJobChoose = _jobController.optionalSkills;
+
+                  _skillsObtain = [..._skillsPeopleObtain, ..._skillsJobObtain];
+                  _skillsObtain = _skillsObtain.toSet().toList();
+                  _skillsObtain.sort((a, b) => a.skill.compareTo(b.skill));
+                  Set<Skill> _skillsObtainSet = Set.from(_skillsObtain);
+                  _skillsChoose = [..._skillsPeopleChoose, ..._skillsJobChoose];
+                  Set<Skill> _skillsChooseSet = Set.from(_skillsChoose);
+                  _skillsChoose = List.from(_skillsChooseSet.difference(_skillsObtainSet));
+                  _skillsChoose = _skillsChoose.toSet().toList();
+                  _skillsChoose.sort((a, b) => a.skill.compareTo(b.skill));
+                  if (_skillsObtain.isEmpty && _skillsChoose.isEmpty) {
+                    _skillsChoose = peopleHuman.optionalSkills;
+                    _isHuman = true;
+                  }
+                  _skillsController = List.filled(_skillsChoose.length, false);
+
                   _controller.animateTo(_controller.index + 1);
                 }
 
                 //step 3 to step 4
                 if (_controller.index == 2 && _skillsForm.currentState!.validate()) {
+                  List<Skill> skills = [];
+                  for (int i = 0; i < _skillsChoose.length; i++) {
+                    if (_skillsChoose[i].selected) {
+                      skills.add(_skillsChoose[i]);
+                    }
+                  }
+                  skills = [...skills, ..._skillsObtain];
+                  skills = skills.toSet().toList();
+                  skills.sort((a, b) => a.skill.compareTo(b.skill));
+                  _modifier = false;
+                  _isOgre = false;
+                  _isFighter = false;
+                  _isRanger = false;
+                  _isEngineer = false;
+                  _lowDexterity = false;
+                  _highDexterity = false;
+                  _superPowerful = false;
+                  _damageOgre = 0;
+                  _attackTemp = -1;
+                  _parryTemp = -1;
+                  _courageTemp = -1;
+                  _intellectTemp = -1;
+                  _charismaTemp = -1;
+                  _dexterityTemp = -1;
+                  _strengthTemp = -1;
+                  _count2Down = true;
+                  _count2Up = false;
+
+                  if (_peopleController == peopleOgre) _isOgre = true;
+                  if (_jobController == jobFighter) _isFighter = true;
+                  if (_jobController == jobRanger) _isRanger = true;
+                  if (_jobController == jobDealer) _isDealer = true;
+                  if (_jobController == jobEngineer) _isEngineer = true;
+                  if (int.parse(_statisticsController[3].text) < 9) _lowDexterity = true;
+                  if (int.parse(_statisticsController[3].text) > 12 && _jobController != jobNinja)
+                    _highDexterity = true;
+                  if (_isOgre || _isFighter || _isRanger || _isDealer || _isEngineer || _lowDexterity || _highDexterity)
+                    _modifier = true;
+
+                  if (_attackTemp < 0) {
+                    if (_jobController == jobBourgeois) {
+                      _attackTemp = _jobController.fight()[0];
+                    } else {
+                      _attackTemp = _peopleController.fight()[0];
+                    }
+                  }
+                  if (_parryTemp < 0) {
+                    if (_jobController == jobBourgeois) {
+                      _parryTemp = _jobController.fight()[1];
+                    } else {
+                      _parryTemp = _peopleController.fight()[1];
+                    }
+                  }
+                  if (_courageTemp < 0) _courageTemp = int.parse(_statisticsController[0].text);
+                  if (_intellectTemp < 0) _intellectTemp = int.parse(_statisticsController[1].text);
+                  if (_charismaTemp < 0) _charismaTemp = int.parse(_statisticsController[2].text);
+                  if (_dexterityTemp < 0) _dexterityTemp = int.parse(_statisticsController[3].text);
+                  if (_strengthTemp < 0) _strengthTemp = int.parse(_statisticsController[4].text);
+
+                  if (_strengthTemp > 12) {
+                    _damageOgre = _strengthTemp - 12;
+                  } else {
+                    _damageOgre = 0;
+                  }
+
+                  if (_isDealer || _isEngineer || _lowDexterity || _highDexterity) {
+                    _modifyController = false;
+                  } else {
+                    _modifyController = true;
+                  }
+
                   _controller.animateTo(_controller.index + 1);
                 }
 

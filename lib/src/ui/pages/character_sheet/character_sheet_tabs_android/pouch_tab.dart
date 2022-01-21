@@ -23,11 +23,20 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Bourse'),
-                      Expanded(flex: 3, child: textField(context)),
+                      Expanded(
+                        flex: 3,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                       Text('Max')
@@ -38,7 +47,12 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Berylium (500 PO)'),
-                      Expanded(child: textField(context)),
+                      Expanded(
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -46,7 +60,12 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Thritil (100 PO)'),
-                      Expanded(child: textField(context)),
+                      Expanded(
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -54,7 +73,12 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Pieces d\'Or'),
-                      Expanded(child: textField(context)),
+                      Expanded(
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -62,7 +86,12 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Pieces d\'Argent'),
-                      Expanded(child: textField(context)),
+                      Expanded(
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -78,11 +107,20 @@ Widget _pouchTab(BuildContext context) {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(flex: 4, child: textField(context)),
+                      Expanded(
+                        flex: 4,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -91,11 +129,20 @@ Widget _pouchTab(BuildContext context) {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(flex: 4, child: textField(context)),
+                      Expanded(
+                        flex: 4,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -104,11 +151,20 @@ Widget _pouchTab(BuildContext context) {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(flex: 4, child: textField(context)),
+                      Expanded(
+                        flex: 4,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -117,11 +173,20 @@ Widget _pouchTab(BuildContext context) {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(flex: 4, child: textField(context)),
+                      Expanded(
+                        flex: 4,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -130,11 +195,20 @@ Widget _pouchTab(BuildContext context) {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(flex: 4, child: textField(context)),
+                      Expanded(
+                        flex: 4,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: textField(context),
+                          child: TextField(
+                            style: Theme.of(context).textTheme.bodyText2,
+                            textAlignVertical: TextAlignVertical.bottom,
+                          ),
                         ),
                       ),
                     ],
@@ -145,13 +219,33 @@ Widget _pouchTab(BuildContext context) {
                   child: Row(
                     children: [
                       Text('Autres monnaies'),
-                      Expanded(child: textField(context)),
+                      Expanded(
+                        child: TextField(
+                          style: Theme.of(context).textTheme.bodyText2,
+                          textAlignVertical: TextAlignVertical.bottom,
+                        ),
+                      ),
                     ],
                   ),
                 ),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
-                Expanded(child: textField(context)),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
+                Expanded(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyText2,
+                    textAlignVertical: TextAlignVertical.bottom,
+                  ),
+                ),
               ],
             ),
           ),
