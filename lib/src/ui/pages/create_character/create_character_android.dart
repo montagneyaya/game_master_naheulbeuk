@@ -74,7 +74,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   late bool _count2Down;
   late bool _count2Up;
   late int _count3;
-  late bool _modifyController;
+  late bool _lowAttack;
+  late bool _lowParry;
+  late bool _highAttack;
+  late bool _highParry;
 
   @override
   void initState() {
@@ -119,6 +122,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _isOgre = false;
     _isFighter = false;
     _isRanger = false;
+    _isDealer = false;
     _isEngineer = false;
     _lowDexterity = false;
     _highDexterity = false;
@@ -133,11 +137,16 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _strengthTemp = -1;
     _count1 = 3;
     _count2 = 2;
-    _count2Down = false;
+    _count2Down = true;
     _count2Up = false;
     _count3 = 1;
-    _modifyController = false;
+    _lowAttack = false;
+    _lowParry = false;
+    _highAttack = false;
+    _highParry = false;
   }
+
+  //step 5
 
   @override
   void dispose() {
@@ -619,7 +628,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                   ),
                                   Expanded(
                                     child: FormField(
-                                      builder: (FormFieldState<bool> field) {
+                                      builder: (FormFieldState<bool> skillsField) {
                                         return Scrollbar(
                                           isAlwaysShown: true,
                                           controller: _scrollControllerChoose,
@@ -713,7 +722,961 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   key: _modifyForm,
                   child: Column(
                     children: [
-                      Text('Modificateur'),
+                      Text(
+                        'Modificateur',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      if (!_modifier)
+                        FormField(
+                          builder: (FormFieldState<bool> noModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                            'Il n\'y a pas de modificateurs pour votre selection. Vous pouvez passer à l\'étape finale'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (noModify) {
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _isOgre)
+                        FormField(
+                          builder: (FormFieldState<bool> ogreModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Vous êtes un ogre',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text(
+                                            'L\'ogre peut obtenir la compétence "Super Bourrin" s\'il retrancher jusqu\'à 3 points à son score de base en ATTAQUE et/ou en PARADE pour en faire un bonus de dégâts. Ainsi il peut avoir +3 en dégâts en plus de ses autres bonus de FORCE, mais son côté bourrin le rend maladroit. En outre, un malus de PRD -5 s\'applique à celui qui tente de parer une attaque de l\'ogre.'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_down),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count1 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text('Vous avez deja utiliser les 3 points'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count1--;
+                                                      _attackTemp--;
+                                                      _damageOgre++;
+                                                      _superPowerful = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_attackTemp AT'),
+                                              Spacer(),
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_down),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count1 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text('Vous avez deja utiliser les 3 points'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count1--;
+                                                      _parryTemp--;
+                                                      _damageOgre++;
+                                                      _superPowerful = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_parryTemp PRD'),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (ogreModify) {
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _isFighter)
+                        FormField(
+                          builder: (FormFieldState<bool> fighterModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Vous etes un guerrier',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous pouvez echanger 1 point d\'AT et 1 point de PRD'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              if (_count2Down)
+                                                IconButton(
+                                                  icon: Icon(Icons.keyboard_arrow_down),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _count2--;
+                                                      _count2Up = true;
+                                                      _count2Down = false;
+                                                      _attackTemp--;
+                                                    });
+                                                  },
+                                                ),
+                                              if (_count2Up)
+                                                IconButton(
+                                                  icon: Icon(Icons.keyboard_arrow_up),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _count2--;
+                                                      _count2Up = false;
+                                                      _count2Down = false;
+                                                      _attackTemp++;
+                                                    });
+                                                  },
+                                                ),
+                                              Text('$_attackTemp AT'),
+                                              Spacer(),
+                                              if (_count2Down)
+                                                IconButton(
+                                                  icon: Icon(Icons.keyboard_arrow_down),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _count2--;
+                                                      _count2Up = true;
+                                                      _count2Down = false;
+                                                      _parryTemp--;
+                                                    });
+                                                  },
+                                                ),
+                                              if (_count2Up)
+                                                IconButton(
+                                                  icon: Icon(Icons.keyboard_arrow_up),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      _count2--;
+                                                      _count2Up = false;
+                                                      _count2Down = false;
+                                                      _parryTemp++;
+                                                    });
+                                                  },
+                                                ),
+                                              Text('$_parryTemp PRD'),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (fighterModify) {
+                            if (_count2 == 1) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez remettre le point en AT ou PRD'),
+                                ),
+                              );
+                              return 'Vous devez remettre le point en AT ou PRD';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _isRanger)
+                        FormField(
+                          builder: (FormFieldState<bool> rangerModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Vous etes un ranger',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous pouvez echanger 1 point entre 2 characteristiques'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        if (_count2Down)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_down),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = true;
+                                                                _count2Down = false;
+                                                                _courageTemp--;
+                                                              });
+                                                            },
+                                                          ),
+                                                        if (_count2Up)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_up),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = false;
+                                                                _count2Down = false;
+                                                                _courageTemp++;
+                                                              });
+                                                            },
+                                                          ),
+                                                        Text('$_courageTemp COU'),
+                                                        Spacer(),
+                                                        if (_count2Down)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_down),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = true;
+                                                                _count2Down = false;
+                                                                _intellectTemp--;
+                                                              });
+                                                            },
+                                                          ),
+                                                        if (_count2Up)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_up),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = false;
+                                                                _count2Down = false;
+                                                                _intellectTemp++;
+                                                              });
+                                                            },
+                                                          ),
+                                                        Text('$_intellectTemp INT'),
+                                                        Spacer(),
+                                                        if (_count2Down)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_down),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = true;
+                                                                _count2Down = false;
+                                                                _charismaTemp--;
+                                                              });
+                                                            },
+                                                          ),
+                                                        if (_count2Up)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_up),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = false;
+                                                                _count2Down = false;
+                                                                _charismaTemp++;
+                                                              });
+                                                            },
+                                                          ),
+                                                        Text('$_charismaTemp CHA'),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        if (_count2Down)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_down),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = true;
+                                                                _count2Down = false;
+                                                                _dexterityTemp--;
+                                                                if (_dexterityTemp < 13) _highDexterity = false;
+                                                                if (_dexterityTemp < 9) _lowDexterity = true;
+                                                              });
+                                                            },
+                                                          ),
+                                                        if (_count2Up)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_up),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = false;
+                                                                _count2Down = false;
+                                                                _dexterityTemp++;
+                                                                if (_dexterityTemp > 12) _highDexterity = true;
+                                                                if (_dexterityTemp > 8) _lowDexterity = false;
+                                                              });
+                                                            },
+                                                          ),
+                                                        Text('$_dexterityTemp AD'),
+                                                        Spacer(),
+                                                        if (_count2Down)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_down),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = true;
+                                                                _count2Down = false;
+                                                                _strengthTemp--;
+                                                              });
+                                                            },
+                                                          ),
+                                                        if (_count2Up)
+                                                          IconButton(
+                                                            icon: Icon(Icons.keyboard_arrow_up),
+                                                            onPressed: () {
+                                                              setState(() {
+                                                                _count2--;
+                                                                _count2Up = false;
+                                                                _count2Down = false;
+                                                                _strengthTemp++;
+                                                              });
+                                                            },
+                                                          ),
+                                                        Text('$_strengthTemp FO'),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (rangerModify) {
+                            if (_count2 == 1) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez remettre le point sur une characteristique'),
+                                ),
+                              );
+                              return 'Vous devez remettre le point une characteristique';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _isDealer)
+                        FormField(
+                          builder: (FormFieldState<bool> dealerModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Vous etes un marchant',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou CHA'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_down),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 < 1) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content:
+                                                                        const Text('Vous avez deja echange vos points'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                if (_count2 == 1) {
+                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                    SnackBar(
+                                                                      content: const Text(
+                                                                          'Vous avez deja enleve 1 point, vous devez le mettre ailleur ...'),
+                                                                    ),
+                                                                  );
+                                                                } else {
+                                                                  _count2--;
+                                                                  _attackTemp--;
+                                                                }
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_attackTemp AT'),
+                                                        Spacer(),
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_down),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 < 1) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content:
+                                                                        const Text('Vous avez deja echange vos points'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                if (_count2 == 1) {
+                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                    SnackBar(
+                                                                      content: const Text(
+                                                                          'Vous avez deja enleve 1 point, vous devez le mettre ailleur ...'),
+                                                                    ),
+                                                                  );
+                                                                } else {
+                                                                  _count2--;
+                                                                  _parryTemp--;
+                                                                }
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_parryTemp PRD'),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_up),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 == 2) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content: const Text(
+                                                                        'Vous devez d\'abord enlever 1 point avant de le mettre ailleur ...'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                _count2--;
+                                                                _intellectTemp++;
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_intellectTemp INT'),
+                                                        Spacer(),
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_up),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 == 2) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content: const Text(
+                                                                        'Vous devez d\'abord enlever 1 point avant de le mettre ailleur ...'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                _count2--;
+                                                                _charismaTemp++;
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_charismaTemp CHA'),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (dealerModify) {
+                            if (_count2 == 2) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez faire les modifications indiquees'),
+                                ),
+                              );
+                              return 'Vous devez faire les modifications indiquees';
+                            }
+                            if (_count2 == 1) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez remettre le point sur une characteristique'),
+                                ),
+                              );
+                              return 'Vous devez remettre le point une characteristique';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _isEngineer)
+                        FormField(
+                          builder: (FormFieldState<bool> engineerModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Vous etes un ingenieur',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou AD'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_down),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 < 1) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content:
+                                                                        const Text('Vous avez deja echange vos points'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                if (_count2 == 1) {
+                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                    SnackBar(
+                                                                      content: const Text(
+                                                                          'Vous avez deja enleve 1 point, vous devez le mettre ailleur ...'),
+                                                                    ),
+                                                                  );
+                                                                } else {
+                                                                  _count2--;
+                                                                  _attackTemp--;
+                                                                }
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_attackTemp AT'),
+                                                        Spacer(),
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_down),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 < 1) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content:
+                                                                        const Text('Vous avez deja echange vos points'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                if (_count2 == 1) {
+                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                    SnackBar(
+                                                                      content: const Text(
+                                                                          'Vous avez deja enleve 1 point, vous devez le mettre ailleur ...'),
+                                                                    ),
+                                                                  );
+                                                                } else {
+                                                                  _count2--;
+                                                                  _parryTemp--;
+                                                                }
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_parryTemp PRD'),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_up),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 == 2) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content: const Text(
+                                                                        'Vous devez d\'abord enlever 1 point avant de le mettre ailleur ...'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                _count2--;
+                                                                _intellectTemp++;
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_intellectTemp INT'),
+                                                        Spacer(),
+                                                        IconButton(
+                                                          icon: Icon(Icons.keyboard_arrow_up),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              if (_count2 == 2) {
+                                                                ScaffoldMessenger.of(context).showSnackBar(
+                                                                  SnackBar(
+                                                                    content: const Text(
+                                                                        'Vous devez d\'abord enlever 1 point avant de le mettre ailleur ...'),
+                                                                  ),
+                                                                );
+                                                              } else {
+                                                                _count2--;
+                                                                _dexterityTemp++;
+                                                                if (_dexterityTemp > 12) _highDexterity = true;
+                                                                if (_dexterityTemp > 8) _lowDexterity = false;
+                                                              }
+                                                            });
+                                                          },
+                                                        ),
+                                                        Text('$_dexterityTemp AD'),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (engineerModify) {
+                            if (_count2 == 2) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez faire les modifications indiquees'),
+                                ),
+                              );
+                              return 'Vous devez faire les modifications indiquees';
+                            }
+                            if (_count2 == 1) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez remettre le point sur une characteristique'),
+                                ),
+                              );
+                              return 'Vous devez remettre le point une characteristique';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _lowDexterity)
+                        FormField(
+                          builder: (FormFieldState<bool> lowDexterityModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Votre adresse est faible',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous devez retirer un point d\'AT ou de PRD'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_down),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count3 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text(
+                                                              'Vous avez deja modifie cette caracteristique'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count3--;
+                                                      _attackTemp--;
+                                                      _lowAttack = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_attackTemp AT'),
+                                              Spacer(),
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_down),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count3 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text(
+                                                              'Vous avez deja modifie cette caracteristique'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count3--;
+                                                      _parryTemp--;
+                                                      _lowParry = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_parryTemp PRD'),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (lowDexterityModify) {
+                            if (_count3 > 0) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez enlever 1 point en AT ou en PRD'),
+                                ),
+                              );
+                              return 'Vous devez enlever 1 point en AT ou en PRD';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier && _highDexterity)
+                        FormField(
+                          builder: (FormFieldState<bool> highDexterityModify) {
+                            return Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                                          child: Text(
+                                            'Votre adresse est eleve',
+                                            style: Theme.of(context).textTheme.subtitle1,
+                                          ),
+                                        ),
+                                        Text('Vous devez mettre 1 point en AT ou PRD'),
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_up),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count3 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text(
+                                                              'Vous avez deja modifie cette caracteristique'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count3--;
+                                                      _attackTemp++;
+                                                      _highAttack = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_attackTemp AT'),
+                                              Spacer(),
+                                              IconButton(
+                                                icon: Icon(Icons.keyboard_arrow_up),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    if (_count3 < 1) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                        SnackBar(
+                                                          content: const Text(
+                                                              'Vous avez deja modifie cette caracteristique'),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      _count3--;
+                                                      _parryTemp++;
+                                                      _highParry = true;
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              Text('$_parryTemp PRD'),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          validator: (highDexterityModify) {
+                            if (_count3 > 0) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Vous devez ajouter 1 point en AT ou en PRD'),
+                                ),
+                              );
+                              return 'Vous devez ajouter 1 point en AT ou en PRD';
+                            }
+                            return null;
+                          },
+                        ),
+                      if (_modifier)
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              child: Text('Reset'),
+                              onPressed: () {
+                                setState(() {
+                                  _modifier = false;
+                                  _isOgre = false;
+                                  _isFighter = false;
+                                  _isRanger = false;
+                                  _isDealer = false;
+                                  _isEngineer = false;
+                                  _lowDexterity = false;
+                                  _highDexterity = false;
+                                  _superPowerful = false;
+                                  _damageOgre = 0;
+                                  _attackTemp = -1;
+                                  _parryTemp = -1;
+                                  _courageTemp = -1;
+                                  _intellectTemp = -1;
+                                  _charismaTemp = -1;
+                                  _dexterityTemp = -1;
+                                  _strengthTemp = -1;
+                                  _count1 = 3;
+                                  _count2 = 2;
+                                  _count2Down = true;
+                                  _count2Up = false;
+                                  _count3 = 1;
+                                  _lowAttack = false;
+                                  _lowParry = false;
+                                  _highAttack = false;
+                                  _highParry = false;
+
+                                  if (_peopleController == peopleOgre) _isOgre = true;
+                                  if (_jobController == jobFighter) _isFighter = true;
+                                  if (_jobController == jobRanger) _isRanger = true;
+                                  if (_jobController == jobDealer) _isDealer = true;
+                                  if (_jobController == jobEngineer) _isEngineer = true;
+                                  if (int.parse(_statisticsController[3].text) < 9) _lowDexterity = true;
+                                  if (int.parse(_statisticsController[3].text) > 12 && _jobController != jobNinja)
+                                    _highDexterity = true;
+                                  if (_isOgre ||
+                                      _isFighter ||
+                                      _isRanger ||
+                                      _isDealer ||
+                                      _isEngineer ||
+                                      _lowDexterity ||
+                                      _highDexterity) _modifier = true;
+
+                                  if (_attackTemp < 0) {
+                                    if (_jobController == jobBourgeois) {
+                                      _attackTemp = _jobController.fight()[0];
+                                    } else {
+                                      _attackTemp = _peopleController.fight()[0];
+                                    }
+                                  }
+                                  if (_parryTemp < 0) {
+                                    if (_jobController == jobBourgeois) {
+                                      _parryTemp = _jobController.fight()[1];
+                                    } else {
+                                      _parryTemp = _peopleController.fight()[1];
+                                    }
+                                  }
+                                  if (_courageTemp < 0) _courageTemp = int.parse(_statisticsController[0].text);
+                                  if (_intellectTemp < 0) _intellectTemp = int.parse(_statisticsController[1].text);
+                                  if (_charismaTemp < 0) _charismaTemp = int.parse(_statisticsController[2].text);
+                                  if (_dexterityTemp < 0) _dexterityTemp = int.parse(_statisticsController[3].text);
+                                  if (_strengthTemp < 0) _strengthTemp = int.parse(_statisticsController[4].text);
+
+                                  if (_strengthTemp > 12) {
+                                    _damageOgre = _strengthTemp - 12;
+                                  } else {
+                                    _damageOgre = 0;
+                                  }
+                                });
+                              },
+                            ),
+                          ],
+                        ),
                     ],
                   ),
                 ),
@@ -863,6 +1826,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   _isOgre = false;
                   _isFighter = false;
                   _isRanger = false;
+                  _isDealer = false;
                   _isEngineer = false;
                   _lowDexterity = false;
                   _highDexterity = false;
@@ -875,8 +1839,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   _charismaTemp = -1;
                   _dexterityTemp = -1;
                   _strengthTemp = -1;
+                  _count1 = 3;
+                  _count2 = 2;
                   _count2Down = true;
                   _count2Up = false;
+                  _count3 = 1;
+                  _lowAttack = false;
+                  _lowParry = false;
+                  _highAttack = false;
+                  _highParry = false;
 
                   if (_peopleController == peopleOgre) _isOgre = true;
                   if (_jobController == jobFighter) _isFighter = true;
@@ -915,17 +1886,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                     _damageOgre = 0;
                   }
 
-                  if (_isDealer || _isEngineer || _lowDexterity || _highDexterity) {
-                    _modifyController = false;
-                  } else {
-                    _modifyController = true;
-                  }
-
                   _controller.animateTo(_controller.index + 1);
                 }
 
                 //step 4 to step 5
                 if (_controller.index == 3 && _modifyForm.currentState!.validate()) {
+
+
                   _controller.animateTo(_controller.index + 1);
                 }
 

@@ -14,4 +14,7 @@ ImageProvider<Object> imageSkills = AssetImage('assets/images/mobile/background_
 ImageProvider<Object> imageStatistics = AssetImage('assets/images/mobile/background_statistics.webp');
 ImageProvider<Object> imageTreasures = AssetImage('assets/images/mobile/background_treasures.webp');
 ImageProvider<Object> imageWeapons = AssetImage('assets/images/mobile/background_weapons.webp');
+ImageProvider<Object> imageCharacters = AssetImage('assets/images/mobile/background_characters.webp');
+ImageProvider<Object> imageAdventures = AssetImage('assets/images/mobile/background_adventures.webp');
+ImageProvider<Object> imageAdventuresSolo = AssetImage('assets/images/mobile/background_adventures_solo.webp');
 ImageProvider<Object> imageWeb = AssetImage('assets/images/web/background.webp');
