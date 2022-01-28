@@ -1,7 +1,13 @@
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skill.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specialization.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'job.g.dart';
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class Job {
+  Job(this.job, this.courage, this.intellect, this.charisma, this.dexterity, this.strength, this.attack, this.parry,
+      this.hp, this.ap, this.pr, this.specialization, this.inheritedSkills, this.optionalSkills);
+
   String job;
   List<int> courage;
   List<int> intellect;
@@ -17,8 +23,6 @@ class Job {
   List<Skill> inheritedSkills;
   List<Skill> optionalSkills;
 
-  Job(this.job, this.courage, this.intellect, this.charisma, this.dexterity, this.strength, this.attack, this.parry,
-      this.hp, this.ap, this.pr, this.specialization, this.inheritedSkills, this.optionalSkills);
 
   List<List<int>> statistics() {
     return [this.courage, this.intellect, this.charisma, this.dexterity, this.strength];
@@ -36,4 +40,7 @@ class Job {
   String toString() {
     return this.job;
   }
+
+  factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
+  Map<String, dynamic> toJson() => _$JobToJson(this);
 }

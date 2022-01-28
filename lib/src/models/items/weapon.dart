@@ -1,28 +1,37 @@
-import 'item.dart';
-import 'items-type.enum.dart';
+import 'package:game_master_naheulbeuk/src/models/items/item.dart';
+import 'package:game_master_naheulbeuk/src/models/items/items-type.enum.dart';
 import 'package:game_master_naheulbeuk/src/resources/services/dices.service.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'weapon.g.dart';
 
+@JsonSerializable(fieldRename: FieldRename.snake,explicitToJson: true)
 class Weapon extends Item {
   Impact impactPoint;
   int breakFight = 6;
 
   Weapon(String nameItem, int price, int weight, ItemsType type, this.impactPoint, this.breakFight)
       : super(nameItem, price, weight, type);
+
+  factory Weapon.fromJson(Map<String, dynamic> json) => _$WeaponFromJson(json);
+  Map<String, dynamic> toJson() => _$WeaponToJson(this);
 }
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class Impact {
-  int _nbD = 1;
-  int _addDamages = 0;
-  Dices _dices;
+  int nbD = 1;
+  int addDamages = 0;
 
-  Impact(this._dices);
+  Impact(this.nbD, this.addDamages);
 
   int impact() {
-    return this._dices.d6() * this._nbD + this._addDamages;
+    return Dices().d6() * this.nbD + this.addDamages;
   }
 
   @override
   String toString() {
-    return '$_nbD D + $_addDamages';
+    return '$nbD D + $addDamages';
   }
+
+  factory Impact.fromJson(Map<String, dynamic> json) => _$ImpactFromJson(json);
+  Map<String, dynamic> toJson() => _$ImpactToJson(this);
 }

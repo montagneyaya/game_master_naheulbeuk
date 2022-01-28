@@ -79,6 +79,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   late bool _highAttack;
   late bool _highParry;
 
+  //step 5
+  final TextEditingController _fateController = TextEditingController();
+  final TextEditingController _goldController = TextEditingController();
+  final TextEditingController _silverController = TextEditingController();
+  late List<TextEditingController> _wealthController;
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
+  late bool _isBourgeois;
+
   @override
   void initState() {
     super.initState();
@@ -144,9 +153,20 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _lowParry = false;
     _highAttack = false;
     _highParry = false;
-  }
 
-  //step 5
+    //step 5
+    _fateController.text = '0';
+    _wealthController = [
+      _goldController,
+      _silverController,
+    ];
+    _wealthController.forEach((element) {
+      element.text = '0';
+    });
+    _nameController.text = '';
+    _genderController.text = '';
+    _isBourgeois = false;
+  }
 
   @override
   void dispose() {
@@ -154,11 +174,19 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _statisticsController.forEach((element) {
       element.dispose();
     });
+    _wealthController.forEach((element) {
+      element.dispose();
+    });
     _courageController.dispose();
     _intellectController.dispose();
     _charismaController.dispose();
     _dexterityController.dispose();
     _strengthController.dispose();
+    _fateController.dispose();
+    _goldController.dispose();
+    _silverController.dispose();
+    _nameController.dispose();
+    _genderController.dispose();
 
     super.dispose();
   }
@@ -1685,19 +1713,204 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
               //step 5
               Container(
                 decoration: background(context, imageDice, BoxFit.contain),
-                child: Form(
-                  key: _finalForm,
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'taper du texte';
-                          }
-                          return null;
-                        },
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom,
+                    ),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: MediaQuery.of(context).size.height -
+                            Scaffold.of(context).appBarMaxHeight! -
+                            kToolbarHeight -
+                            kBottomNavigationBarHeight,
                       ),
-                    ],
+                      child: IntrinsicHeight(
+                        child: Form(
+                          key: _finalForm,
+                          child: Column(
+                            children: [
+                              Text(
+                                'Finale',
+                                style: Theme.of(context).textTheme.headline5,
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(flex: 2, child: Text('Points de destin')),
+                                    Expanded(
+                                      child: TextFormField(
+                                        controller: _fateController,
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                        textAlign: TextAlign.center,
+                                        maxLength: 1,
+                                        keyboardType: TextInputType.numberWithOptions(),
+                                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                        decoration: InputDecoration(
+                                          counterText: '',
+                                        ),
+                                        validator: (value) {
+                                          if (int.parse(value!) < 0 || int.parse(value) > 3) {
+                                            return 'entre 0 et 3';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 32.0),
+                                        child: IconButton(
+                                          icon: Icon(IconsDices.dice4),
+                                          onPressed: () {
+                                            int value = Dices().d4() - 1;
+                                            _fateController.text = value.toString();
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Column(
+                                        children: [
+                                          Expanded(
+                                            child: Row(
+                                              children: [
+                                                Expanded(flex: 2, child: Text('Pieces d\'or')),
+                                                Expanded(
+                                                  child: TextFormField(
+                                                    controller: _wealthController[0],
+                                                    style: Theme.of(context).textTheme.bodyText2,
+                                                    textAlignVertical: TextAlignVertical.bottom,
+                                                    textAlign: TextAlign.center,
+                                                    maxLength: 2,
+                                                    keyboardType: TextInputType.numberWithOptions(),
+                                                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                    ),
+                                                    validator: (value) {
+                                                      if (!_isBourgeois &&
+                                                          (int.parse(value!) < 20 || int.parse(value) > 120)) {
+                                                        return 'entre 20 et 120';
+                                                      }
+                                                      if (_isBourgeois &&
+                                                          (int.parse(value!) < 40 || int.parse(value) > 240)) {
+                                                        return 'entre 40 et 240';
+                                                      }
+                                                      return null;
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: Row(
+                                              children: [
+                                                Expanded(flex: 2, child: Text('Pieces d\'argent')),
+                                                Expanded(
+                                                  child: TextFormField(
+                                                    controller: _wealthController[1],
+                                                    style: Theme.of(context).textTheme.bodyText2,
+                                                    textAlignVertical: TextAlignVertical.bottom,
+                                                    textAlign: TextAlign.center,
+                                                    maxLength: 3,
+                                                    keyboardType: TextInputType.numberWithOptions(),
+                                                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                    ),
+                                                    validator: (value) {
+                                                      if (!_isBourgeois &&
+                                                          (int.parse(value!) < 0 || int.parse(value) > 99)) {
+                                                        return 'entre 0 et 99';
+                                                      }
+                                                      if (_isBourgeois &&
+                                                          (int.parse(value!) < 0 || int.parse(value) > 198)) {
+                                                        return 'entre 0 et 198';
+                                                      }
+                                                      return null;
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 32.0),
+                                        child: IconButton(
+                                          icon: Icon(IconsDices.dice6_2),
+                                          onPressed: () {
+                                            int goldCoins = (Dices().d6() + Dices().d6()) * 10;
+                                            int silverCoins = Dices().d100() - 1;
+                                            if (_isBourgeois) {
+                                              int addGoldCoins = (Dices().d6() + Dices().d6()) * 10;
+                                              int addSilverCoins = Dices().d100() - 1;
+                                              goldCoins += addGoldCoins;
+                                              silverCoins += addSilverCoins;
+                                            }
+                                            _wealthController[0].text = goldCoins.toString();
+                                            _wealthController[1].text = silverCoins.toString();
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(child: Text('Nom')),
+                                    Expanded(
+                                      flex: 3,
+                                      child: TextFormField(
+                                        controller: _nameController,
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                        validator: (nameCharacter) {
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(child: Text('Genre')),
+                                    Expanded(
+                                      flex: 3,
+                                      child: TextFormField(
+                                        controller: _genderController,
+                                        style: Theme.of(context).textTheme.bodyText2,
+                                        textAlignVertical: TextAlignVertical.bottom,
+                                        validator: (gender) {
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -1716,6 +1929,165 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
               ),
               onPressed: _controller.index > 0
                   ? () {
+                      //step 5 to step 4
+                      if (_controller.index == 4) {
+                        _fateController.text = '0';
+                        _wealthController = [
+                          _goldController,
+                          _silverController,
+                        ];
+                        _wealthController.forEach((element) {
+                          element.text = '0';
+                        });
+                        _nameController.text = '';
+                        _genderController.text = '';
+                        _isBourgeois = false;
+
+                        if (_jobController == jobBourgeois) _isBourgeois = true;
+                      }
+
+                      //step 4 to step 3
+                      if (_controller.index == 3) {
+                        _modifier = false;
+                        _isOgre = false;
+                        _isFighter = false;
+                        _isRanger = false;
+                        _isDealer = false;
+                        _isEngineer = false;
+                        _lowDexterity = false;
+                        _highDexterity = false;
+                        _superPowerful = false;
+                        _damageOgre = 0;
+                        _attackTemp = -1;
+                        _parryTemp = -1;
+                        _courageTemp = -1;
+                        _intellectTemp = -1;
+                        _charismaTemp = -1;
+                        _dexterityTemp = -1;
+                        _strengthTemp = -1;
+                        _count1 = 3;
+                        _count2 = 2;
+                        _count2Down = true;
+                        _count2Up = false;
+                        _count3 = 1;
+                        _lowAttack = false;
+                        _lowParry = false;
+                        _highAttack = false;
+                        _highParry = false;
+
+                        if (_peopleController == peopleOgre) _isOgre = true;
+                        if (_jobController == jobFighter) _isFighter = true;
+                        if (_jobController == jobRanger) _isRanger = true;
+                        if (_jobController == jobDealer) _isDealer = true;
+                        if (_jobController == jobEngineer) _isEngineer = true;
+                        if (int.parse(_statisticsController[3].text) < 9) _lowDexterity = true;
+                        if (int.parse(_statisticsController[3].text) > 12 && _jobController != jobNinja)
+                          _highDexterity = true;
+                        if (_isOgre ||
+                            _isFighter ||
+                            _isRanger ||
+                            _isDealer ||
+                            _isEngineer ||
+                            _lowDexterity ||
+                            _highDexterity) _modifier = true;
+
+                        if (_attackTemp < 0) {
+                          if (_jobController == jobBourgeois) {
+                            _attackTemp = _jobController.fight()[0];
+                          } else {
+                            _attackTemp = _peopleController.fight()[0];
+                          }
+                        }
+                        if (_parryTemp < 0) {
+                          if (_jobController == jobBourgeois) {
+                            _parryTemp = _jobController.fight()[1];
+                          } else {
+                            _parryTemp = _peopleController.fight()[1];
+                          }
+                        }
+                        if (_courageTemp < 0) _courageTemp = int.parse(_statisticsController[0].text);
+                        if (_intellectTemp < 0) _intellectTemp = int.parse(_statisticsController[1].text);
+                        if (_charismaTemp < 0) _charismaTemp = int.parse(_statisticsController[2].text);
+                        if (_dexterityTemp < 0) _dexterityTemp = int.parse(_statisticsController[3].text);
+                        if (_strengthTemp < 0) _strengthTemp = int.parse(_statisticsController[4].text);
+
+                        if (_strengthTemp > 12) {
+                          _damageOgre = _strengthTemp - 12;
+                        } else {
+                          _damageOgre = 0;
+                        }
+                      }
+
+                      //step 3 to step 2
+                      if (_controller.index == 2) {
+                        List<Skill> _skillsPeopleObtain = [];
+                        List<Skill> _skillsPeopleChoose = [];
+                        List<Skill> _skillsJobObtain = [];
+                        List<Skill> _skillsJobChoose = [];
+                        _skillsController = [];
+                        _skillsObtain = [];
+                        _skillsChoose = [];
+                        _isHuman = false;
+                        skillEnum.forEach((element) {
+                          element.isSelect(false);
+                        });
+                        if (_peopleController != peopleHuman) {
+                          _skillsPeopleObtain = _peopleController.birthSkills;
+                          _skillsPeopleChoose = _peopleController.optionalSkills;
+                        }
+                        _skillsJobObtain = _jobController.inheritedSkills;
+                        _skillsJobChoose = _jobController.optionalSkills;
+
+                        _skillsObtain = [..._skillsPeopleObtain, ..._skillsJobObtain];
+                        _skillsObtain = _skillsObtain.toSet().toList();
+                        _skillsObtain.sort((a, b) => a.skill.compareTo(b.skill));
+                        Set<Skill> _skillsObtainSet = Set.from(_skillsObtain);
+                        _skillsChoose = [..._skillsPeopleChoose, ..._skillsJobChoose];
+                        Set<Skill> _skillsChooseSet = Set.from(_skillsChoose);
+                        _skillsChoose = List.from(_skillsChooseSet.difference(_skillsObtainSet));
+                        _skillsChoose = _skillsChoose.toSet().toList();
+                        _skillsChoose.sort((a, b) => a.skill.compareTo(b.skill));
+                        if (_skillsObtain.isEmpty && _skillsChoose.isEmpty) {
+                          _skillsChoose = peopleHuman.optionalSkills;
+                          _isHuman = true;
+                        }
+                        _skillsController = List.filled(_skillsChoose.length, false);
+                      }
+
+                      //step 2 to step 1
+                      if (_controller.index == 1) {
+                        _peoplesList = [];
+                        _jobsList = [];
+                        _specializationsList = [];
+                        _peopleController = peopleMonster;
+                        _jobController = jobAny;
+                        _specializationController = specializationAny;
+
+                        for (People people in peopleEnum) {
+                          bool test = false;
+                          for (int i = 0; i < 5; i++) {
+                            test = int.parse(_statisticsController[i].text) > people.statistics()[i][0] - 1 &&
+                                int.parse(_statisticsController[i].text) < people.statistics()[i][1] + 1;
+                            if (!test) break;
+                          }
+                          if (test) _peoplesList.add(people);
+                        }
+                        _peopleController = _peoplesList[0];
+
+                        for (Job job in _peopleController.jobs) {
+                          bool test = false;
+                          for (int i = 0; i < 5; i++) {
+                            test = int.parse(_statisticsController[i].text) > job.statistics()[i][0] - 1 &&
+                                int.parse(_statisticsController[i].text) < job.statistics()[i][1] + 1;
+                            if (!test) break;
+                          }
+                          if (test) _jobsList.add(job);
+                        }
+                        _jobController = _jobsList[0];
+
+                        _specializationsList = _jobController.specialization;
+                        _specializationController = _specializationsList[0];
+                      }
                       _controller.animateTo(_controller.index - 1);
                     }
                   : null,
@@ -1891,7 +2263,27 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
 
                 //step 4 to step 5
                 if (_controller.index == 3 && _modifyForm.currentState!.validate()) {
+                  _fateController.text = '0';
+                  _wealthController = [
+                    _goldController,
+                    _silverController,
+                  ];
+                  _wealthController.forEach((element) {
+                    element.text = '0';
+                  });
+                  _nameController.text = '';
+                  _genderController.text = '';
+                  _isBourgeois = false;
 
+                  if (_jobController == jobBourgeois) _isBourgeois = true;
+                  if (!_highDexterity) {
+                    if (_highAttack) _attackTemp--;
+                    if (_highParry) _parryTemp--;
+                  }
+                  if (!_lowDexterity) {
+                    if (_lowAttack) _attackTemp++;
+                    if (_lowParry) _parryTemp++;
+                  }
 
                   _controller.animateTo(_controller.index + 1);
                 }

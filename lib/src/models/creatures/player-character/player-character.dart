@@ -1,14 +1,114 @@
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/job.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/jobs.enum.dart';
+import 'package:game_master_naheulbeuk/src/models/creatures/player-character/people.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specialization.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specializations.enum.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skill.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/creatures.dart';
+import 'package:game_master_naheulbeuk/src/models/items/armor.dart';
+import 'package:game_master_naheulbeuk/src/models/items/weapon.dart';
 import 'package:game_master_naheulbeuk/src/resources/modifiers/add-natural-damages.dart';
 import 'package:game_master_naheulbeuk/src/resources/modifiers/add-spell-damages.dart';
 import 'package:game_master_naheulbeuk/src/models/items/item.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'player-character.g.dart';
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacter extends Creatures {
+  PlayerCharacter(
+    String nameCreature,
+    String gender,
+    People people,
+    Job job,
+    Specialization specialization,
+    int actualHealthPoints,
+    int actualAstralPoints,
+    int healthPoints,
+    int astralPoints,
+    int fatePoints,
+    int experience,
+    int level,
+    int currentLoad,
+    int maxLoad,
+    int attack,
+    int throwAttack,
+    int parry,
+    int evade,
+    int courage,
+    int intellect,
+    int charisma,
+    int dexterity,
+    int strength,
+    int naturalPR,
+    int magicPR,
+    int maxNaturalPR,
+    int spellResistance,
+    int physicalSpell,
+    int psychicSpell,
+    int engineer,
+    List<Skill> skills,
+    List<Weapon>? weapons,
+    List<Armor>? armors,
+    List<Item>? other,
+    List<AddNaturalDamages> addNaturalDamages,
+    List<AddSpellDamages> addSpellDamages,
+    int modifyAttack,
+    int modifyThrowAttack,
+    int modifyParry,
+    int modifyEvade,
+    int modifyCourage,
+    int modifyIntellect,
+    int modifyCharisma,
+    int modifyDexterity,
+    int modifyStrength,
+  ) {
+    this.nameCreature = nameCreature;
+    this.gender = gender;
+    this.people = people;
+    this.job = job;
+    this.specialization = specialization;
+    this.actualHealthPoints = actualHealthPoints;
+    this.actualAstralPoints = actualAstralPoints;
+    this.healthPoints = healthPoints;
+    this.astralPoints = astralPoints;
+    this.fatePoints = fatePoints;
+    this.experience = experience;
+    this.level = level;
+    this.currentLoad = currentLoad;
+    this.maxLoad = maxLoad;
+    this.attack = attack;
+    this.throwAttack = throwAttack;
+    this.parry = parry;
+    this.evade = evade;
+    this.courage = courage;
+    this.intellect = intellect;
+    this.charisma = charisma;
+    this.dexterity = dexterity;
+    this.strength = strength;
+    this.naturalPR = naturalPR;
+    this.magicPR = magicPR;
+    this.maxNaturalPR = maxNaturalPR;
+    this.spellResistance = spellResistance;
+    this.physicalSpell = physicalSpell;
+    this.psychicSpell = psychicSpell;
+    this.engineer = engineer;
+    this.skills = skills;
+    this.weapons = weapons;
+    this.armors = armors;
+    this.other = other;
+    this.addNaturalDamages = addNaturalDamages;
+    this.addSpellDamages = addSpellDamages;
+    this.modifyAttack = modifyAttack;
+    this.modifyThrowAttack = modifyThrowAttack;
+    this.modifyParry = modifyParry;
+    this.modifyEvade = modifyEvade;
+    this.modifyCourage = modifyCourage;
+    this.modifyIntellect = modifyIntellect;
+    this.modifyCharisma = modifyCharisma;
+    this.modifyDexterity = modifyDexterity;
+    this.modifyStrength = modifyStrength;
+  }
+
   String gender = '';
   Job job = jobAny;
   Specialization specialization = specializationAny;
@@ -138,4 +238,7 @@ class PlayerCharacter extends Creatures {
     if (value < 9) addStrengthDamages.damages = -1;
     return addStrengthDamages;
   }
+
+  factory PlayerCharacter.fromJson(Map<String, dynamic> json) => _$PlayerCharacterFromJson(json);
+  Map<String, dynamic> toJson() => _$PlayerCharacterToJson(this);
 }
