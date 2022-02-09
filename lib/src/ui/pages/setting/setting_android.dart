@@ -27,18 +27,31 @@ class _SettingAndroidState extends State<SettingAndroid> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('Parametres'),
+        Text(
+          'Parametres',
+          style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+        ),
         Divider(),
         Row(
           children: [
-            Text('Theme'),
+            Text(
+              'Theme',
+              style:
+                  Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+            ),
             Consumer<ThemeModeNotifier>(
               builder: (context, themeModeNotifier, child) => Expanded(
                 child: Column(
                   children: [
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
-                      title: const Text('Clair'),
+                      title: Text(
+                        'Clair',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge
+                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                      ),
                       secondary: Icon(Icons.light_mode),
                       value: ThemeMode.light,
                       controlAffinity: ListTileControlAffinity.trailing,
@@ -49,7 +62,13 @@ class _SettingAndroidState extends State<SettingAndroid> {
                     ),
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
-                      title: const Text('Sombre'),
+                      title: Text(
+                        'Sombre',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge
+                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                      ),
                       secondary: Icon(Icons.dark_mode),
                       value: ThemeMode.dark,
                       controlAffinity: ListTileControlAffinity.trailing,
@@ -60,7 +79,13 @@ class _SettingAndroidState extends State<SettingAndroid> {
                     ),
                     RadioListTile<ThemeMode>(
                       activeColor: Theme.of(context).colorScheme.primary,
-                      title: const Text('Systeme'),
+                      title: Text(
+                        'Systeme',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge
+                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                      ),
                       secondary: Icon(Icons.lightbulb),
                       value: ThemeMode.system,
                       controlAffinity: ListTileControlAffinity.trailing,

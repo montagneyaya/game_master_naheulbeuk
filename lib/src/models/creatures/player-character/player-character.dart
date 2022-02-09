@@ -18,100 +18,46 @@ class PlayerCharacter extends Creatures {
   PlayerCharacter(
     String nameCreature,
     String gender,
-    People people,
-    Job job,
-    Specialization specialization,
-    int actualHealthPoints,
-    int actualAstralPoints,
+    String people,
+    String job,
+    String specialization,
     int healthPoints,
     int astralPoints,
     int fatePoints,
-    int experience,
-    int level,
-    int currentLoad,
     int maxLoad,
     int attack,
-    int throwAttack,
     int parry,
-    int evade,
     int courage,
     int intellect,
     int charisma,
     int dexterity,
     int strength,
-    int naturalPR,
-    int magicPR,
     int maxNaturalPR,
-    int spellResistance,
-    int physicalSpell,
-    int psychicSpell,
-    int engineer,
     List<Skill> skills,
-    List<Weapon>? weapons,
-    List<Armor>? armors,
-    List<Item>? other,
-    List<AddNaturalDamages> addNaturalDamages,
-    List<AddSpellDamages> addSpellDamages,
-    int modifyAttack,
-    int modifyThrowAttack,
-    int modifyParry,
-    int modifyEvade,
-    int modifyCourage,
-    int modifyIntellect,
-    int modifyCharisma,
-    int modifyDexterity,
-    int modifyStrength,
   ) {
     this.nameCreature = nameCreature;
     this.gender = gender;
     this.people = people;
     this.job = job;
     this.specialization = specialization;
-    this.actualHealthPoints = actualHealthPoints;
-    this.actualAstralPoints = actualAstralPoints;
     this.healthPoints = healthPoints;
     this.astralPoints = astralPoints;
     this.fatePoints = fatePoints;
-    this.experience = experience;
-    this.level = level;
-    this.currentLoad = currentLoad;
     this.maxLoad = maxLoad;
     this.attack = attack;
-    this.throwAttack = throwAttack;
     this.parry = parry;
-    this.evade = evade;
     this.courage = courage;
     this.intellect = intellect;
     this.charisma = charisma;
     this.dexterity = dexterity;
     this.strength = strength;
-    this.naturalPR = naturalPR;
-    this.magicPR = magicPR;
     this.maxNaturalPR = maxNaturalPR;
-    this.spellResistance = spellResistance;
-    this.physicalSpell = physicalSpell;
-    this.psychicSpell = psychicSpell;
-    this.engineer = engineer;
     this.skills = skills;
-    this.weapons = weapons;
-    this.armors = armors;
-    this.other = other;
-    this.addNaturalDamages = addNaturalDamages;
-    this.addSpellDamages = addSpellDamages;
-    this.modifyAttack = modifyAttack;
-    this.modifyThrowAttack = modifyThrowAttack;
-    this.modifyParry = modifyParry;
-    this.modifyEvade = modifyEvade;
-    this.modifyCourage = modifyCourage;
-    this.modifyIntellect = modifyIntellect;
-    this.modifyCharisma = modifyCharisma;
-    this.modifyDexterity = modifyDexterity;
-    this.modifyStrength = modifyStrength;
   }
 
   String gender = '';
-  Job job = jobAny;
-  Specialization specialization = specializationAny;
+  String job = 'Aucun';
+  String specialization = 'Aucune';
   int fatePoints = 0;
   int level = 1;
   int currentLoad = 0;
@@ -128,7 +74,7 @@ class PlayerCharacter extends Creatures {
   int engineer = 0;
   List<AddNaturalDamages> addNaturalDamages = [];
   List<AddSpellDamages> addSpellDamages = [];
-  List<Item>? other;
+  List<Item> other = [];
   int modifyAttack = 0;
   int modifyThrowAttack = 0;
   int modifyParry = 0;

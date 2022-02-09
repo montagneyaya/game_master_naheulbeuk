@@ -6,7 +6,7 @@ BottomNavigationBar bottomHomeNavigation(int index, BuildContext context) {
   return BottomNavigationBar(
     elevation: 0.0,
     backgroundColor: Theme.of(context).colorScheme.background,
-    selectedItemColor: Theme.of(context).colorScheme.primaryVariant,
+    selectedItemColor: Theme.of(context).colorScheme.onSecondary,
     unselectedItemColor: Theme.of(context).colorScheme.onBackground.withOpacity(darkOpacity26),
     currentIndex: index,
     showUnselectedLabels: true,

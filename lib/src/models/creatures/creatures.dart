@@ -5,7 +5,7 @@ import 'package:game_master_naheulbeuk/src/models/items/weapon.dart';
 
 abstract class Creatures {
   String nameCreature = '';
-  People people = peopleMonster;
+  String people = 'Monstre';
   int healthPoints = 0;
   int astralPoints = 0;
   int experience = 0;
@@ -17,8 +17,8 @@ abstract class Creatures {
   int courage = 0;
   int naturalPR = 0;
   int magicPR = 0;
-  List<Weapon>? weapons;
-  List<Armor>? armors;
+  List<Weapon> weapons = [];
+  List<Armor> armors = [];
   int actualHealthPoints = 0;
   int actualAstralPoints = 0;
 }

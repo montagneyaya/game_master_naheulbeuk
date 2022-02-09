@@ -5,11 +5,13 @@ import 'package:game_master_naheulbeuk/src/models/creatures/player-character/job
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/jobs.enum.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/people.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/peoples.enum.dart';
+import 'package:game_master_naheulbeuk/src/models/creatures/player-character/player-character.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skill.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/skills.enum.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specialization.dart';
 import 'package:game_master_naheulbeuk/src/models/creatures/player-character/specializations.enum.dart';
 import 'package:game_master_naheulbeuk/src/resources/services/dices.service.dart';
+import 'package:game_master_naheulbeuk/src/resources/services/save.dart';
 import 'package:game_master_naheulbeuk/src/ui/components/background/background.dart';
 import 'package:game_master_naheulbeuk/src/ui/instances/background/background.dart';
 import 'package:game_master_naheulbeuk/src/ui/themes/icons_dices.dart';
@@ -52,6 +54,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   late List<bool> _skillsController;
 
   //step 4
+  late List<Skill> _skills;
   late bool _modifier;
   late bool _isOgre;
   late bool _isFighter;
@@ -87,6 +90,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _genderController = TextEditingController();
   late bool _isBourgeois;
+
+  //save
+  late int _healthPoints;
+  late int _astralPoints;
+  late int _maxLoad;
+  late int _maxNaturalPR;
+  late String _textTest;
 
   @override
   void initState() {
@@ -127,6 +137,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _skillsController = [];
 
     //step 4
+    _skills = [];
     _modifier = false;
     _isOgre = false;
     _isFighter = false;
@@ -166,6 +177,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
     _nameController.text = '';
     _genderController.text = '';
     _isBourgeois = false;
+
+    //save
+    _healthPoints = 0;
+    _astralPoints = 0;
+    _maxLoad = 0;
+    _maxNaturalPR = 0;
+    _textTest = '';
   }
 
   @override
@@ -1764,8 +1782,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice4),
                                           onPressed: () {
-                                            int value = Dices().d4() - 1;
-                                            _fateController.text = value.toString();
+                                            setState(() {
+                                              int value = Dices().d4() - 1;
+                                              _fateController.text = value.toString();
+                                            });
                                           },
                                         ),
                                       ),
@@ -1853,16 +1873,18 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6_2),
                                           onPressed: () {
-                                            int goldCoins = (Dices().d6() + Dices().d6()) * 10;
-                                            int silverCoins = Dices().d100() - 1;
-                                            if (_isBourgeois) {
-                                              int addGoldCoins = (Dices().d6() + Dices().d6()) * 10;
-                                              int addSilverCoins = Dices().d100() - 1;
-                                              goldCoins += addGoldCoins;
-                                              silverCoins += addSilverCoins;
-                                            }
-                                            _wealthController[0].text = goldCoins.toString();
-                                            _wealthController[1].text = silverCoins.toString();
+                                            setState(() {
+                                              int goldCoins = (Dices().d6() + Dices().d6()) * 10;
+                                              int silverCoins = Dices().d100() - 1;
+                                              if (_isBourgeois) {
+                                                int addGoldCoins = (Dices().d6() + Dices().d6()) * 10;
+                                                int addSilverCoins = Dices().d100() - 1;
+                                                goldCoins += addGoldCoins;
+                                                silverCoins += addSilverCoins;
+                                              }
+                                              _wealthController[0].text = goldCoins.toString();
+                                              _wealthController[1].text = silverCoins.toString();
+                                            });
                                           },
                                         ),
                                       ),
@@ -1901,6 +1923,19 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         validator: (gender) {
                                           return null;
                                         },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Card(
+                                        child: SingleChildScrollView(
+                                          child: Text(_textTest),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -2185,15 +2220,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
 
                 //step 3 to step 4
                 if (_controller.index == 2 && _skillsForm.currentState!.validate()) {
-                  List<Skill> skills = [];
-                  for (int i = 0; i < _skillsChoose.length; i++) {
-                    if (_skillsChoose[i].selected) {
-                      skills.add(_skillsChoose[i]);
-                    }
-                  }
-                  skills = [...skills, ..._skillsObtain];
-                  skills = skills.toSet().toList();
-                  skills.sort((a, b) => a.skill.compareTo(b.skill));
+                  _skills = [];
                   _modifier = false;
                   _isOgre = false;
                   _isFighter = false;
@@ -2220,6 +2247,16 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                   _lowParry = false;
                   _highAttack = false;
                   _highParry = false;
+
+                  for (int i = 0; i < _skillsChoose.length; i++) {
+                    if (_skillsChoose[i].selected) {
+                      _skills.add(_skillsChoose[i]);
+                    }
+                  }
+                  _skills = [..._skills, ..._skillsObtain];
+                  _skills = _skills.toSet().toList();
+                  _skills.sort((a, b) => a.skill.compareTo(b.skill));
+                  print(_skills);
 
                   if (_peopleController == peopleOgre) _isOgre = true;
                   if (_jobController == jobFighter) _isFighter = true;
@@ -2289,6 +2326,65 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                 }
 
                 //step 5 to save
+                if (_controller.index == 4 && _finalForm.currentState!.validate()) {
+                  setState(() {
+                    _healthPoints = _peopleController.hp + _jobController.points()[0];
+                    if ((_peopleController == peopleHuman || _peopleController == peopleBarbarian) &&
+                        _jobController == jobFighter) _healthPoints = 35;
+                    if (_jobController == jobWizard) {
+                      if (_peopleController == peopleHuman) {
+                        _healthPoints = 20;
+                      } else {
+                        _healthPoints = (_peopleController.hp.toDouble() - (_peopleController.hp.toDouble() * 30 / 100))
+                            .ceil()
+                            .toInt();
+                      }
+                    }
+                    if (_jobController == jobPaladin && _peopleController == peopleHuman) _healthPoints = 32;
+
+                    _astralPoints = 0;
+                    if (_jobController == jobCleric || _jobController == jobWizard || _jobController == jobPaladin)
+                      _astralPoints = _jobController.points()[1];
+
+                    _maxLoad = _peopleController.load;
+                    if (_jobController == jobWizard && (_peopleController.load > 10 || _peopleController.load == 0))
+                      _maxLoad = 10;
+
+                    _maxNaturalPR = 0;
+                    if (_jobController.pr != 0) _maxNaturalPR = _jobController.pr;
+                    if (_jobController.pr == 0) _maxNaturalPR = _peopleController.pr;
+                    if (_jobController == jobCleric &&
+                        (_specializationController == specializationAdathie ||
+                            _specializationController == specializationDlul)) _maxNaturalPR = 5;
+
+                    print(_skills);
+                    PlayerCharacter character1 = PlayerCharacter(
+                      _nameController.text,
+                      _genderController.text,
+                      _peopleController.people,
+                      _jobController.job,
+                      _specializationController.specialization,
+                      _healthPoints,
+                      _astralPoints,
+                      int.parse(_fateController.text),
+                      _maxLoad,
+                      _attackTemp,
+                      _parryTemp,
+                      int.parse(_statisticsController[0].text),
+                      int.parse(_statisticsController[1].text),
+                      int.parse(_statisticsController[2].text),
+                      int.parse(_statisticsController[3].text),
+                      int.parse(_statisticsController[4].text),
+                      _maxNaturalPR,
+                      _skills,
+                    );
+                    Map<String, dynamic> character1Json = character1.toJson();
+                    _textTest = character1Json.toString();
+                    String file = 'characters/character1.json';
+                    Save(file).writeJson(character1Json);
+                    Navigator.pop(context);
+                  });
+                }
               },
             ),
           ],

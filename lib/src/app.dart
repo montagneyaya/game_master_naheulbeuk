@@ -24,16 +24,16 @@ class TerreDeFanghApp extends StatelessWidget {
     ThemeData? themeDevice;
     ThemeData? themeDeviceDark;
     if (kIsWeb) {
-      themeDevice = terreDeFanghWebTheme(context);
-      themeDeviceDark = terreDeFanghWebThemeDark(context);
+      themeDevice = terreDeFanghWebTheme;
+      themeDeviceDark = terreDeFanghWebThemeDark;
     }
     if (targetPlatform == TargetPlatform.android) {
-      themeDevice = terreDeFanghTheme(context);
-      themeDeviceDark = terreDeFanghThemeDark(context);
+      themeDevice = terreDeFanghTheme;
+      themeDeviceDark = terreDeFanghThemeDark;
     }
     if (targetPlatform == TargetPlatform.iOS) {
-      themeDevice = terreDeFanghIOSTheme(context);
-      themeDeviceDark = terreDeFanghIOSThemeDark(context);
+      themeDevice = terreDeFanghIOSTheme;
+      themeDeviceDark = terreDeFanghIOSThemeDark;
     }
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return ChangeNotifierProvider(

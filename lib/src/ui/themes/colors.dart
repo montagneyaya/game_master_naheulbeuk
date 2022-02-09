@@ -1,39 +1,84 @@
 import 'package:flutter/material.dart';
 
+HSLColor primaryColor(double tone) => HSLColor.fromAHSL(1.0, 15.0, 0.25, tone);
+HSLColor secondaryColor(double tone) => HSLColor.fromAHSL(1.0, 344.0, 0.25, tone);
+HSLColor tertiaryColor(double tone) => HSLColor.fromAHSL(1.0, 134.0, 0.25, tone);
+
+HSLColor primaryDarkColor(double tone) => HSLColor.fromAHSL(1.0, 199.0, 0.18, tone);
+HSLColor secondaryDarkColor(double tone) => HSLColor.fromAHSL(1.0, 168.0, 0.18, tone);
+HSLColor tertiaryDarkColor(double tone) => HSLColor.fromAHSL(1.0, 319.0, 0.18, tone);
+
+HSLColor neutralColor(double tone) => HSLColor.fromAHSL(1.0, 0.0, 0.0, tone);
+
+HSLColor neutralVariantColor(double tone) => HSLColor.fromAHSL(1.0, 44.0, 0.25, tone);
+HSLColor neutralDarkVariantColor(double tone) => HSLColor.fromAHSL(1.0, 228.0, 0.18, tone);
+
+HSLColor errorColor(double tone) => HSLColor.fromAHSL(1.0, 0.0, 0.70, tone);
+
 ColorScheme terreDeFanghColors() {
-  final ColorScheme base = ColorScheme(
-    primary: Colors.brown[500]!,
-    primaryVariant: Colors.brown[800]!,
-    secondary: Colors.blueGrey[600]!,
-    secondaryVariant: Colors.indigo[200]!,
-    surface: Colors.lime[50]!,
-    background: Colors.lime[100]!,
-    error: Colors.red[900]!,
-    onPrimary: Colors.white,
-    onSecondary: Colors.white,
-    onSurface: Colors.black87,
-    onBackground: Colors.black87,
-    onError: Colors.white,
-    brightness: Brightness.light,
-  );
-  return base;
+    final ColorScheme base = ThemeData().colorScheme;
+    return base.copyWith(
+        primary: primaryColor(0.40).toColor(),
+        onPrimary: primaryColor(1.0).toColor(),
+        primaryContainer: primaryColor(0.90).toColor(),
+        onPrimaryContainer: primaryColor(0.10).toColor(),
+
+        secondary: secondaryColor(0.40).toColor(),
+        onSecondary: secondaryColor(1.0).toColor(),
+        secondaryContainer: secondaryColor(0.90).toColor(),
+        onSecondaryContainer: secondaryColor(0.10).toColor(),
+
+        tertiary: tertiaryColor(0.40).toColor(),
+        onTertiary: tertiaryColor(1.0).toColor(),
+        tertiaryContainer: tertiaryColor(0.90).toColor(),
+        onTertiaryContainer: tertiaryColor(0.10).toColor(),
+
+        background: neutralVariantColor(0.70).toColor(),
+        onBackground: neutralColor(0.10).toColor(),
+        surface: neutralVariantColor(0.70).toColor(),
+        onSurface: neutralColor(0.10).toColor(),
+
+        surfaceVariant: neutralVariantColor(0.60).toColor(),
+        onSurfaceVariant: neutralVariantColor(0.30).toColor(),
+        outline: neutralVariantColor(0.50).toColor(),
+
+        error: errorColor(0.40).toColor(),
+        onError: errorColor(1.0).toColor(),
+        errorContainer: errorColor(0.90).toColor(),
+        onErrorContainer: errorColor(0.10).toColor(),
+    );
 }
 
 ColorScheme terreDeFanghColorsDark() {
-  final ColorScheme base = ColorScheme(
-    primary: Colors.blueGrey[600]!,
-    primaryVariant: Colors.indigo[200]!,
-    secondary: Colors.brown[500]!,
-    secondaryVariant: Colors.brown[800]!,
-    surface: Colors.grey[800]!,
-    background: Colors.grey[900]!,
-    error: Colors.red[900]!,
-    onPrimary: Colors.white,
-    onSecondary: Colors.white,
-    onSurface: Colors.white,
-    onBackground: Colors.white,
-    onError: Colors.white,
-    brightness: Brightness.dark,
-  );
-  return base;
+    final ColorScheme base = ThemeData.dark().colorScheme;
+    return base.copyWith(
+        primary: primaryDarkColor(0.80).toColor(),
+        onPrimary: primaryDarkColor(0.20).toColor(),
+        primaryContainer: primaryDarkColor(0.30).toColor(),
+        onPrimaryContainer: primaryDarkColor(0.90).toColor(),
+
+        secondary: secondaryDarkColor(0.80).toColor(),
+        onSecondary: secondaryDarkColor(0.20).toColor(),
+        secondaryContainer: secondaryDarkColor(0.30).toColor(),
+        onSecondaryContainer: secondaryDarkColor(0.90).toColor(),
+
+        tertiary: tertiaryDarkColor(0.80).toColor(),
+        onTertiary: tertiaryDarkColor(0.20).toColor(),
+        tertiaryContainer: tertiaryDarkColor(0.30).toColor(),
+        onTertiaryContainer: tertiaryDarkColor(0.90).toColor(),
+
+        background: neutralColor(0.10).toColor(),
+        onBackground: neutralColor(0.90).toColor(),
+        surface: neutralColor(0.10).toColor(),
+        onSurface: neutralColor(0.90).toColor(),
+
+        surfaceVariant: neutralDarkVariantColor(0.30).toColor(),
+        onSurfaceVariant: neutralDarkVariantColor(0.80).toColor(),
+        outline: neutralDarkVariantColor(0.60).toColor(),
+
+        error: errorColor(0.80).toColor(),
+        onError: errorColor(0.20).toColor(),
+        errorContainer: errorColor(0.30).toColor(),
+        onErrorContainer: errorColor(0.90).toColor(),
+    );
 }

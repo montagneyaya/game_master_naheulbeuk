@@ -20,7 +20,7 @@ class BaseWeb extends StatelessWidget {
           constraints: BoxConstraints.expand(),
           decoration: backgroundContent,
           child: Column(
-            children: <Widget>[
+            children: [
               Image(image: _imageHeader(context)),
               appBarWeb(context),
               Expanded(

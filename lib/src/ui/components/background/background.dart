@@ -7,8 +7,8 @@ BoxDecoration background(BuildContext context, ImageProvider<Object> backgroundI
     image: DecorationImage(
       colorFilter: ColorFilter.mode(
           Theme.of(context).brightness == Brightness.light
-              ? Theme.of(context).colorScheme.background.withOpacity(lightOpacity24)
-              : Theme.of(context).colorScheme.background.withOpacity(darkOpacity26),
+              ? Theme.of(context).colorScheme.background.withOpacity(lightOpacity12)
+              : Theme.of(context).colorScheme.background.withOpacity(darkOpacity12),
           BlendMode.dstATop),
       image: backgroundImage,
       fit: backgroundFit,
