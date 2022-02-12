@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:game_master_naheulbeuk/src/ui/components/background/background.dart';
 import 'package:game_master_naheulbeuk/src/ui/instances/background/background.dart';
+import 'package:game_master_naheulbeuk/src/resources/services/save.dart';
 part 'package:game_master_naheulbeuk/src/ui/pages/home/home_tabs_android/character_tab.dart';
 part 'package:game_master_naheulbeuk/src/ui/pages/home/home_tabs_android/quest_tab.dart';
 part 'package:game_master_naheulbeuk/src/ui/pages/home/home_tabs_android/solo_quest_tab.dart';
@@ -19,6 +20,8 @@ class _HomeAndroidState extends State<HomeAndroid> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    String file = 'characters/character1.json';
+    Map<String, dynamic> testCharacter = Save(file).readJson() as Map<String, dynamic>;
   }
 
   @override

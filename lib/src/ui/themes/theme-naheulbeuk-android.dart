@@ -6,10 +6,12 @@ final ThemeData terreDeFanghTheme = ThemeData(
   textTheme: terreDeFanghText(),
   colorScheme: terreDeFanghColors(),
   brightness: Brightness.light,
+  highlightColor: terreDeFanghColors().primary,
 );
 
 final ThemeData terreDeFanghThemeDark = ThemeData(
   textTheme: terreDeFanghText(),
   colorScheme: terreDeFanghColorsDark(),
   brightness: Brightness.dark,
+  highlightColor: terreDeFanghColorsDark().primary,
 );

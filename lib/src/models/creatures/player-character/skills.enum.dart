@@ -155,7 +155,7 @@ final Skill skillLooselyHit = new Skill(
     '''(AT) : Quand on n'a pas la force nécessaire pour battre un adversaire au corps à corps et qu’on a le sens moral d’un chacal, on a toujours le choix de feindre le sourire et de frapper de le dos. Cette compétence permet de doubler les dégâts d’une attaque lorsque celle-ci est placée dans le dos, par une bonne connaissance des points vitaux. Mais cela n'est possible qu'une seule fois par combat car l'ennemi ne se fait pas prendre deux fois à ce genre de jeu. Il faut tout de même réussir son attaque... et se mettre en position au préalable. La parade est impossible.
 Requis : avoir une dague, poignard ou autre lame courte - se placer dans le dos de la cible.
 Utilisation : une fois les dégâts de l'arme calculés sur une attaque réussie, multipliez le total par 2.
-Restrictions : une seule fois par combat, non cumulable avec « ambidextrie », ne fonctionne que sur les humanoïdes de taille standard (pas sur les monstres, esprits, animaux et autres) – dague ou autre la courte uniquement.''',
+Restrictions : une seule fois par combat, non cumulable avec « ambidextrie », ne fonctionne que sur les humanoïdes de taille standard (pas sur les monstres, esprits, animaux et autres) – dague ou autres lames courtes uniquement.''',
     false);
 
 final Skill skillPoppycock = new Skill(

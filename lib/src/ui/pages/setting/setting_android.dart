@@ -52,7 +52,10 @@ class _SettingAndroidState extends State<SettingAndroid> {
                             .bodyLarge
                             ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                       ),
-                      secondary: Icon(Icons.light_mode),
+                      secondary: Icon(
+                        Icons.light_mode,
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
                       value: ThemeMode.light,
                       controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,
@@ -69,7 +72,10 @@ class _SettingAndroidState extends State<SettingAndroid> {
                             .bodyLarge
                             ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                       ),
-                      secondary: Icon(Icons.dark_mode),
+                      secondary: Icon(
+                        Icons.dark_mode,
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
                       value: ThemeMode.dark,
                       controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,
@@ -86,7 +92,10 @@ class _SettingAndroidState extends State<SettingAndroid> {
                             .bodyLarge
                             ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                       ),
-                      secondary: Icon(Icons.lightbulb),
+                      secondary: Icon(
+                        Icons.lightbulb,
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
                       value: ThemeMode.system,
                       controlAffinity: ListTileControlAffinity.trailing,
                       groupValue: themeModeNotifier.themeMode,

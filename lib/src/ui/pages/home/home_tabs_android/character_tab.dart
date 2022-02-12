@@ -12,7 +12,10 @@ Widget _characterTab(BuildContext context) {
           child: Row(
             children: [
               Icon(Icons.add),
-              Text('Ajouter un personnage'),
+              Text(
+                'Ajouter un personnage',
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+              ),
             ],
           ),
         ),

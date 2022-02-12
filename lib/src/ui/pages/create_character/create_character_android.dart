@@ -239,16 +239,31 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                             children: [
                               Text(
                                 'Caracteristiques',
-                                style: Theme.of(context).textTheme.headline5,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineLarge
+                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                               ),
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Courage (COU)')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Courage (COU)',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _statisticsController[0],
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 2,
@@ -270,6 +285,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
                                             _statisticsController[0].text = value.toString();
@@ -283,11 +299,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Intelligence (INT)')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Intelligence (INT)',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _statisticsController[1],
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 2,
@@ -309,6 +337,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
                                             _statisticsController[1].text = value.toString();
@@ -322,11 +351,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Charisme (CHA)')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Charisme (CHA)',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _statisticsController[2],
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 2,
@@ -348,6 +389,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
                                             _statisticsController[2].text = value.toString();
@@ -361,11 +403,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Adresse (AD)')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Adresse (AD)',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _statisticsController[3],
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 2,
@@ -387,6 +441,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
                                             _statisticsController[3].text = value.toString();
@@ -400,11 +455,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Force (FO)')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Force (FO)',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _statisticsController[4],
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 2,
@@ -426,6 +493,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             int value = Dices().d6() + 7;
                                             _statisticsController[4].text = value.toString();
@@ -466,7 +534,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                       Expanded(
                         child: Text(
                           'Personnage',
-                          style: Theme.of(context).textTheme.headline5,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineLarge
+                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                         ),
                       ),
                       Expanded(
@@ -478,11 +549,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                 children: [
                                   Text(
                                     'Origine',
-                                    style: Theme.of(context).textTheme.subtitle1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge
+                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                   ),
                                   Expanded(
                                     child: DropdownButtonFormField<People>(
-                                      style: Theme.of(context).textTheme.bodyText2,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                       value: _peopleController,
                                       items: _peoplesList.map(buildMenuPeople).toList(),
                                       onChanged: (value) {
@@ -528,11 +605,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                 children: [
                                   Text(
                                     'Metier',
-                                    style: Theme.of(context).textTheme.subtitle1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge
+                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                   ),
                                   Expanded(
                                     child: DropdownButtonFormField<Job>(
-                                      style: Theme.of(context).textTheme.bodyText2,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                       value: _jobController,
                                       items: _jobsList.map(buildMenuJob).toList(),
                                       onChanged: (value) {
@@ -565,11 +648,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                 children: [
                                   Text(
                                     'Specialisation',
-                                    style: Theme.of(context).textTheme.subtitle1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge
+                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                   ),
                                   Expanded(
                                     child: DropdownButtonFormField<Specialization>(
-                                      style: Theme.of(context).textTheme.bodyText2,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                       value: _specializationController,
                                       items: _specializationsList.map(buildMenuSpecialization).toList(),
                                       onChanged: (value) {
@@ -605,7 +694,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                     children: [
                       Text(
                         'Competences',
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineLarge
+                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                       ),
                       if (_isHuman == false)
                         Expanded(
@@ -616,7 +708,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                   children: [
                                     Text(
                                       'Compétences acquise',
-                                      style: Theme.of(context).textTheme.subtitle1,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge
+                                          ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                     ),
                                     Expanded(
                                       child: Scrollbar(
@@ -630,7 +725,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                             return ListTile(
                                               title: Text(
                                                 _skillsObtain[index].skill,
-                                                style: Theme.of(context).textTheme.bodyText2,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                               ),
                                               onTap: () {
                                                 showDialog(
@@ -638,11 +736,18 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   builder: (context) {
                                                     return AlertDialog(
                                                       backgroundColor: Theme.of(context).colorScheme.surface,
-                                                      title: Text(_skillsObtain[index].skill),
+                                                      title: Text(
+                                                        _skillsObtain[index].skill,
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .titleLarge
+                                                            ?.copyWith(color: Theme.of(context).colorScheme.onSurface),
+                                                      ),
                                                       content: SingleChildScrollView(
                                                         child: Text(
                                                           _skillsObtain[index].described,
-                                                          style: Theme.of(context).textTheme.bodyText2,
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onSurface),
                                                         ),
                                                       ),
                                                     );
@@ -670,7 +775,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                     _isHuman
                                         ? 'Compétences à sélectionner (en choisir 4)'
                                         : 'Compétences à sélectionner (en choisir 2)',
-                                    style: Theme.of(context).textTheme.subtitle1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge
+                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                   ),
                                   Expanded(
                                     child: FormField(
@@ -699,7 +807,8 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                     child: ListTile(
                                                       title: Text(
                                                         _skillsChoose[index].skill,
-                                                        style: Theme.of(context).textTheme.bodyText2,
+                                                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                            color: Theme.of(context).colorScheme.onBackground),
                                                       ),
                                                       onTap: () {
                                                         showDialog(
@@ -707,11 +816,20 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                           builder: (context) {
                                                             return AlertDialog(
                                                               backgroundColor: Theme.of(context).colorScheme.surface,
-                                                              title: Text(_skillsChoose[index].skill),
+                                                              title: Text(
+                                                                _skillsChoose[index].skill,
+                                                                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                                                                    color: Theme.of(context).colorScheme.onSurface),
+                                                              ),
                                                               content: SingleChildScrollView(
                                                                 child: Text(
                                                                   _skillsChoose[index].described,
-                                                                  style: Theme.of(context).textTheme.bodyText2,
+                                                                  style: Theme.of(context)
+                                                                      .textTheme
+                                                                      .bodyLarge
+                                                                      ?.copyWith(
+                                                                          color:
+                                                                              Theme.of(context).colorScheme.onSurface),
                                                                 ),
                                                               ),
                                                             );
@@ -770,7 +888,10 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                     children: [
                       Text(
                         'Modificateur',
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineLarge
+                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                       ),
                       if (!_modifier)
                         FormField(
@@ -783,7 +904,12 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                            'Il n\'y a pas de modificateurs pour votre selection. Vous pouvez passer à l\'étape finale'),
+                                          'Il n\'y a pas de modificateurs pour votre selection. Vous pouvez passer à l\'étape finale',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -808,16 +934,25 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Vous êtes un ogre',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
                                         Text(
-                                            'L\'ogre peut obtenir la compétence "Super Bourrin" s\'il retrancher jusqu\'à 3 points à son score de base en ATTAQUE et/ou en PARADE pour en faire un bonus de dégâts. Ainsi il peut avoir +3 en dégâts en plus de ses autres bonus de FORCE, mais son côté bourrin le rend maladroit. En outre, un malus de PRD -5 s\'applique à celui qui tente de parer une attaque de l\'ogre.'),
+                                          'L\'ogre peut obtenir la compétence "Super Bourrin" s\'il retrancher jusqu\'à 3 points à son score de base en ATTAQUE et/ou en PARADE pour en faire un bonus de dégâts. Ainsi il peut avoir +3 en dégâts en plus de ses autres bonus de FORCE, mais son côté bourrin le rend maladroit. En outre, un malus de PRD -5 s\'applique à celui qui tente de parer une attaque de l\'ogre.',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_down),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count1 < 1) {
@@ -835,10 +970,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_attackTemp AT'),
+                                              Text(
+                                                '$_attackTemp AT',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                               Spacer(),
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_down),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count1 < 1) {
@@ -856,7 +998,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_parryTemp PRD'),
+                                              Text(
+                                                '$_parryTemp PRD',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -884,16 +1032,26 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Vous etes un guerrier',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous pouvez echanger 1 point d\'AT et 1 point de PRD'),
+                                        Text(
+                                          'Vous pouvez echanger 1 point d\'AT et 1 point de PRD',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
                                               if (_count2Down)
                                                 IconButton(
                                                   icon: Icon(Icons.keyboard_arrow_down),
+                                                  color: Theme.of(context).colorScheme.onBackground,
                                                   onPressed: () {
                                                     setState(() {
                                                       _count2--;
@@ -906,6 +1064,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                               if (_count2Up)
                                                 IconButton(
                                                   icon: Icon(Icons.keyboard_arrow_up),
+                                                  color: Theme.of(context).colorScheme.onBackground,
                                                   onPressed: () {
                                                     setState(() {
                                                       _count2--;
@@ -915,11 +1074,18 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                     });
                                                   },
                                                 ),
-                                              Text('$_attackTemp AT'),
+                                              Text(
+                                                '$_attackTemp AT',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                               Spacer(),
                                               if (_count2Down)
                                                 IconButton(
                                                   icon: Icon(Icons.keyboard_arrow_down),
+                                                  color: Theme.of(context).colorScheme.onBackground,
                                                   onPressed: () {
                                                     setState(() {
                                                       _count2--;
@@ -932,6 +1098,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                               if (_count2Up)
                                                 IconButton(
                                                   icon: Icon(Icons.keyboard_arrow_up),
+                                                  color: Theme.of(context).colorScheme.onBackground,
                                                   onPressed: () {
                                                     setState(() {
                                                       _count2--;
@@ -941,7 +1108,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                     });
                                                   },
                                                 ),
-                                              Text('$_parryTemp PRD'),
+                                              Text(
+                                                '$_parryTemp PRD',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -977,10 +1150,19 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Vous etes un ranger',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous pouvez echanger 1 point entre 2 characteristiques'),
+                                        Text(
+                                          'Vous pouvez echanger 1 point entre 2 characteristiques',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
@@ -993,6 +1175,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Down)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_down),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1005,6 +1188,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Up)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_up),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1014,11 +1198,16 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                               });
                                                             },
                                                           ),
-                                                        Text('$_courageTemp COU'),
+                                                        Text(
+                                                          '$_courageTemp COU',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         if (_count2Down)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_down),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1031,6 +1220,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Up)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_up),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1040,11 +1230,16 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                               });
                                                             },
                                                           ),
-                                                        Text('$_intellectTemp INT'),
+                                                        Text(
+                                                          '$_intellectTemp INT',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         if (_count2Down)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_down),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1057,6 +1252,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Up)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_up),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1066,7 +1262,11 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                               });
                                                             },
                                                           ),
-                                                        Text('$_charismaTemp CHA'),
+                                                        Text(
+                                                          '$_charismaTemp CHA',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                     Row(
@@ -1074,6 +1274,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Down)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_down),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1088,6 +1289,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Up)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_up),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1099,11 +1301,16 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                               });
                                                             },
                                                           ),
-                                                        Text('$_dexterityTemp AD'),
+                                                        Text(
+                                                          '$_dexterityTemp AD',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         if (_count2Down)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_down),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1116,6 +1323,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                         if (_count2Up)
                                                           IconButton(
                                                             icon: Icon(Icons.keyboard_arrow_up),
+                                                            color: Theme.of(context).colorScheme.onBackground,
                                                             onPressed: () {
                                                               setState(() {
                                                                 _count2--;
@@ -1125,7 +1333,11 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                               });
                                                             },
                                                           ),
-                                                        Text('$_strengthTemp FO'),
+                                                        Text(
+                                                          '$_strengthTemp FO',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -1166,10 +1378,19 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Vous etes un marchant',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou CHA'),
+                                        Text(
+                                          'Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou CHA',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
@@ -1181,6 +1402,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                       children: [
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_down),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 < 1) {
@@ -1206,10 +1428,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_attackTemp AT'),
+                                                        Text(
+                                                          '$_attackTemp AT',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_down),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 < 1) {
@@ -1235,13 +1462,18 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_parryTemp PRD'),
+                                                        Text(
+                                                          '$_parryTemp PRD',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                     Row(
                                                       children: [
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_up),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 == 2) {
@@ -1258,10 +1490,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_intellectTemp INT'),
+                                                        Text(
+                                                          '$_intellectTemp INT',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_up),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 == 2) {
@@ -1278,7 +1515,11 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_charismaTemp CHA'),
+                                                        Text(
+                                                          '$_charismaTemp CHA',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -1327,10 +1568,19 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Vous etes un ingenieur',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou AD'),
+                                        Text(
+                                          'Vous devez retirer 1 point en AT ou PRD et mettre 1 point en INT ou AD',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
@@ -1342,6 +1592,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                       children: [
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_down),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 < 1) {
@@ -1367,10 +1618,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_attackTemp AT'),
+                                                        Text(
+                                                          '$_attackTemp AT',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_down),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 < 1) {
@@ -1396,13 +1652,18 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_parryTemp PRD'),
+                                                        Text(
+                                                          '$_parryTemp PRD',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                     Row(
                                                       children: [
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_up),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 == 2) {
@@ -1419,10 +1680,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_intellectTemp INT'),
+                                                        Text(
+                                                          '$_intellectTemp INT',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                         Spacer(),
                                                         IconButton(
                                                           icon: Icon(Icons.keyboard_arrow_up),
+                                                          color: Theme.of(context).colorScheme.onBackground,
                                                           onPressed: () {
                                                             setState(() {
                                                               if (_count2 == 2) {
@@ -1441,7 +1707,11 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                             });
                                                           },
                                                         ),
-                                                        Text('$_dexterityTemp AD'),
+                                                        Text(
+                                                          '$_dexterityTemp AD',
+                                                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                                              color: Theme.of(context).colorScheme.onBackground),
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
@@ -1490,15 +1760,25 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Votre adresse est faible',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous devez retirer un point d\'AT ou de PRD'),
+                                        Text(
+                                          'Vous devez retirer un point d\'AT ou de PRD',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_down),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count3 < 1) {
@@ -1516,10 +1796,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_attackTemp AT'),
+                                              Text(
+                                                '$_attackTemp AT',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                               Spacer(),
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_down),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count3 < 1) {
@@ -1537,7 +1824,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_parryTemp PRD'),
+                                              Text(
+                                                '$_parryTemp PRD',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -1573,15 +1866,25 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           padding: EdgeInsets.symmetric(vertical: 16.0),
                                           child: Text(
                                             'Votre adresse est eleve',
-                                            style: Theme.of(context).textTheme.subtitle1,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                           ),
                                         ),
-                                        Text('Vous devez mettre 1 point en AT ou PRD'),
+                                        Text(
+                                          'Vous devez mettre 1 point en AT ou PRD',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                        ),
                                         Expanded(
                                           child: Row(
                                             children: [
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_up),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count3 < 1) {
@@ -1599,10 +1902,17 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_attackTemp AT'),
+                                              Text(
+                                                '$_attackTemp AT',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                               Spacer(),
                                               IconButton(
                                                 icon: Icon(Icons.keyboard_arrow_up),
+                                                color: Theme.of(context).colorScheme.onBackground,
                                                 onPressed: () {
                                                   setState(() {
                                                     if (_count3 < 1) {
@@ -1620,7 +1930,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                                   });
                                                 },
                                               ),
-                                              Text('$_parryTemp PRD'),
+                                              Text(
+                                                '$_parryTemp PRD',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge
+                                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -1647,7 +1963,13 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                         Row(
                           children: [
                             OutlinedButton(
-                              child: Text('Reset'),
+                              child: Text(
+                                'Reset',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge
+                                    ?.copyWith(color: Theme.of(context).colorScheme.primary),
+                              ),
                               onPressed: () {
                                 setState(() {
                                   _modifier = false;
@@ -1750,16 +2072,31 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                             children: [
                               Text(
                                 'Finale',
-                                style: Theme.of(context).textTheme.headline5,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineLarge
+                                    ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                               ),
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(flex: 2, child: Text('Points de destin')),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        'Points de destin',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       child: TextFormField(
                                         controller: _fateController,
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         textAlign: TextAlign.center,
                                         maxLength: 1,
@@ -1781,6 +2118,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice4),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             setState(() {
                                               int value = Dices().d4() - 1;
@@ -1803,11 +2141,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           Expanded(
                                             child: Row(
                                               children: [
-                                                Expanded(flex: 2, child: Text('Pieces d\'or')),
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: Text(
+                                                    'Pieces d\'or',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelLarge
+                                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                                  ),
+                                                ),
                                                 Expanded(
                                                   child: TextFormField(
                                                     controller: _wealthController[0],
-                                                    style: Theme.of(context).textTheme.bodyText2,
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .bodyLarge
+                                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                                     textAlignVertical: TextAlignVertical.bottom,
                                                     textAlign: TextAlign.center,
                                                     maxLength: 2,
@@ -1835,11 +2185,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                           Expanded(
                                             child: Row(
                                               children: [
-                                                Expanded(flex: 2, child: Text('Pieces d\'argent')),
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: Text(
+                                                    'Pieces d\'argent',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelLarge
+                                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                                  ),
+                                                ),
                                                 Expanded(
                                                   child: TextFormField(
                                                     controller: _wealthController[1],
-                                                    style: Theme.of(context).textTheme.bodyText2,
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .bodyLarge
+                                                        ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                                     textAlignVertical: TextAlignVertical.bottom,
                                                     textAlign: TextAlign.center,
                                                     maxLength: 3,
@@ -1872,6 +2234,7 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                                         padding: EdgeInsets.only(left: 32.0),
                                         child: IconButton(
                                           icon: Icon(IconsDices.dice6_2),
+                                          color: Theme.of(context).colorScheme.onBackground,
                                           onPressed: () {
                                             setState(() {
                                               int goldCoins = (Dices().d6() + Dices().d6()) * 10;
@@ -1895,12 +2258,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(child: Text('Nom')),
+                                    Expanded(
+                                      child: Text(
+                                        'Nom',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       flex: 3,
                                       child: TextFormField(
                                         controller: _nameController,
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         validator: (nameCharacter) {
                                           return null;
@@ -1913,12 +2287,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(child: Text('Genre')),
+                                    Expanded(
+                                      child: Text(
+                                        'Genre',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+                                      ),
+                                    ),
                                     Expanded(
                                       flex: 3,
                                       child: TextFormField(
                                         controller: _genderController,
-                                        style: Theme.of(context).textTheme.bodyText2,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(color: Theme.of(context).colorScheme.onBackground),
                                         textAlignVertical: TextAlignVertical.bottom,
                                         validator: (gender) {
                                           return null;
@@ -1958,8 +2343,15 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
             TextButton(
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back),
-                  Text('Precedent'),
+                  Icon(
+                    Icons.arrow_back,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  Text(
+                    'Precedent',
+                    style:
+                        Theme.of(context).textTheme.labelLarge?.copyWith(color: Theme.of(context).colorScheme.primary),
+                  ),
                 ],
               ),
               onPressed: _controller.index > 0
@@ -2138,8 +2530,25 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
             TextButton(
               child: Row(
                 children: [
-                  _controller.index < _controller.length - 1 ? Text('Suivant') : Text('Sauve.'),
-                  Icon(Icons.arrow_forward),
+                  _controller.index < _controller.length - 1
+                      ? Text(
+                          'Suivant',
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge
+                              ?.copyWith(color: Theme.of(context).colorScheme.primary),
+                        )
+                      : Text(
+                          'Sauve.',
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge
+                              ?.copyWith(color: Theme.of(context).colorScheme.primary),
+                        ),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ],
               ),
               onPressed: () {
@@ -2395,14 +2804,23 @@ class _CreateCharacterAndroidState extends State<CreateCharacterAndroid> with Si
 
   DropdownMenuItem<People> buildMenuPeople(People value) => DropdownMenuItem(
         value: value,
-        child: Text(value.people),
+        child: Text(
+          value.people,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+        ),
       );
   DropdownMenuItem<Job> buildMenuJob(Job value) => DropdownMenuItem(
         value: value,
-        child: Text(value.job),
+        child: Text(
+          value.job,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+        ),
       );
   DropdownMenuItem<Specialization> buildMenuSpecialization(Specialization value) => DropdownMenuItem(
         value: value,
-        child: Text(value.specialization),
+        child: Text(
+          value.specialization,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onBackground),
+        ),
       );
 }
